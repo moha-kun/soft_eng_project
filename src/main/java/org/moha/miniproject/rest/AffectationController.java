@@ -15,12 +15,16 @@ public class AffectationController {
 
     @PostMapping("/conducteur")
     public String affecterConducteur(@RequestBody CondVoyDTO dto) {
-        return affectationService.affecterConducteur(dto.getIdConducteur(), dto.getIdVoyage());
+        return affectationService.affecterConducteur(
+                dto.getIdConducteur(),
+                dto.getIdVoyage());
     }
 
     @PostMapping("/vehicule")
     public String affecterVehicule(@RequestBody VehVoyDTO dto) {
-        return affectationService.affecterVehicule(dto.getIdVehicule(), dto.getIdVoyage());
+        return affectationService.affecterVehicule(
+                dto.getIdVehicule(),
+                dto.getIdVoyage());
     }
 
 }
