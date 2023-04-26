@@ -24,8 +24,9 @@ public class AuthenticationService {
     @Autowired
     private AuthenticationManager authenticationManager;
 
+    // TODO re-implement the method since you made User class abstract
     public AuthenticationResponse register(RegisterRequest request) {
-        var user = User.builder()
+        /*var user = User.builder()
                 .firstName(request.getFirstName())
                 .lastName(request.getLastName())
                 .email(request.getEmail())
@@ -36,16 +37,17 @@ public class AuthenticationService {
         var token = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
                 .token(token)
-                .build();
+                .build();*/
+        return null;
     }
 
     public AuthenticationResponse authenticate(AuthenticationRequest request) {
-        var utilisateur = userRepository.findByEmail(request.getEmail())
+        var user = userRepository.findByEmail(request.getEmail())
                 .orElseThrow(() -> new RuntimeException("User not found"));
         authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword(),utilisateur.getAuthorities())
+                new UsernamePasswordAuthenticationToken(request.getEmail(), request.getPassword(),user.getAuthorities())
         );
-        var token = jwtService.generateToken(utilisateur);
+        var token = jwtService.generateToken(user);
         return AuthenticationResponse.builder()
                 .token(token)
                 .build();

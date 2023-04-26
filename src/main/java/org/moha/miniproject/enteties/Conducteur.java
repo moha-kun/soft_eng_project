@@ -1,10 +1,7 @@
 package org.moha.miniproject.enteties;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -15,20 +12,11 @@ import java.util.List;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Conducteur {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_conducteur")
-    private Long idConducteur;
+@Builder
+public class Conducteur extends User {
 
     @Column(name = "matricule")
     private String matricule;
-
-    @Column(name = "nom")
-    private String nom;
-
-    @Column(name = "prenom")
-    private String prenom;
 
     @Column(name = "cin")
     private String cin;

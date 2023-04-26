@@ -1,10 +1,7 @@
 package org.moha.miniproject.enteties;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Table(name = "manager")
@@ -12,23 +9,8 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class Manager {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_manager")
-    private Long idManager;
-
-    @Column(name = "nom")
-    private String nom;
-
-    @Column(name = "prenom")
-    private String prenom;
-
-    @Column(name = "email")
-    private String email;
-
-    @Column(name = "password")
-    private String password;
+@Builder
+public class Manager extends User {
 
     @Column(name = "addresse")
     private String addresse;

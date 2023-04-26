@@ -23,7 +23,7 @@ public class DisponibiliteService {
     public boolean isConducteurDisponible(Long idConducteur, LocalDate dateDepart, LocalDate dateArrive) {
         List<Conducteur> conducteurs = conducteurRepository.getDisponibleConducteur(dateDepart, dateArrive);
         for(Conducteur cond : conducteurs) {
-            if (cond.getIdConducteur() == idConducteur)
+            if (cond.getId() == idConducteur)
                 return true;
         }
         return false;
