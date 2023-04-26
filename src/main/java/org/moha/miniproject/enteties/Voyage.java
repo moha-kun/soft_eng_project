@@ -35,11 +35,11 @@ public class Voyage {
     @Column(name = "type_vehicule")
     private Character typeVehicule;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_conducteur")
     private Conducteur conducteur;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_vehicule")
     private Vehicule vehicule;
 }

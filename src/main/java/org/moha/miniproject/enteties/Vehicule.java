@@ -1,5 +1,6 @@
 package org.moha.miniproject.enteties;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,18 +34,19 @@ public class Vehicule {
     @Column(name = "categorie")
     private Character categorie;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "vehicule")
+    @OneToMany(mappedBy = "vehicule")
+    @JsonIgnore
     private List<Voyage> voyages;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "vehicule")
+    @OneToMany(mappedBy = "vehicule")
     private List<CarteGrise> carteGrises;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "vehicule")
+    @OneToMany(mappedBy = "vehicule")
     private List<Assurance> assurances;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "vehicule")
+    @OneToMany(mappedBy = "vehicule")
     private List<VisiteTechnique> visiteTechniques;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "vehicule")
+    @OneToMany( mappedBy = "vehicule")
     private List<Vignette> vignettes;
 }
