@@ -1,10 +1,12 @@
-package org.moha.miniproject.services;
+package org.moha.miniproject.services.jwt;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
+
+import org.moha.miniproject.utils.Utilities;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
@@ -15,9 +17,9 @@ import java.util.Map;
 import java.util.function.Function;
 
 @Service
-public class JwtService {
+public class JwtServiceImp implements JWTService {
 
-    public static String SECRET_KEY = "58703273357638792F423F4528482B4D6251655468576D597133743677397A24";
+    public Utilities utilities;
 
     public String generateToken(UserDetails userDetails) {
         return generateToken(new HashMap<>(), userDetails);
@@ -67,7 +69,7 @@ public class JwtService {
     }
 
     private Key getSigningKey() {
-        byte[] keyBytes = Decoders.BASE64.decode(SECRET_KEY);
+        byte[] keyBytes = Decoders.BASE64.decode(Utilities.SECRET_KEY);
         return Keys.hmacShaKeyFor(keyBytes);
     }
 

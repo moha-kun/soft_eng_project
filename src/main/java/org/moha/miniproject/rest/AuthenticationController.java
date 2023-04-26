@@ -3,7 +3,7 @@ package org.moha.miniproject.rest;
 import org.moha.miniproject.dto.AuthenticationRequest;
 import org.moha.miniproject.dto.AuthenticationResponse;
 import org.moha.miniproject.dto.RegisterRequest;
-import org.moha.miniproject.services.AuthenticationService;
+import org.moha.miniproject.services.authentication.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
