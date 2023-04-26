@@ -19,6 +19,7 @@ public class DisponibiliteServiceImp implements DisponibiliteService {
     @Autowired
     private VehiculeRepository vehiculeRepository;
 
+    @Override
     public boolean isConducteurDisponible(
             Long idConducteur,
             LocalDate dateDepart,
@@ -34,6 +35,7 @@ public class DisponibiliteServiceImp implements DisponibiliteService {
         return false;
     }
 
+    @Override
     public boolean isVehiculeDisponible(Long idVehicule,
             LocalDate dateDepart, LocalDate dateArrive) {
         List<Vehicule> vehicules = vehiculeRepository

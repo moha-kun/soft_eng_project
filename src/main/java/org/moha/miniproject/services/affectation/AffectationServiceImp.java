@@ -29,6 +29,7 @@ public class AffectationServiceImp implements AffectationService {
     @Autowired
     private VehiculeRepository vehiculeRepository;
 
+    @Override
     public String affecterConducteur(Long idConducteur, Long idVoyage) {
         Voyage voyage = voyageRepository.findById(idVoyage).get();
 
@@ -50,6 +51,7 @@ public class AffectationServiceImp implements AffectationService {
         return "Successful ERROR!";
     }
 
+    @Override
     public String affecterVehicule(Long idVehicule, Long idVoyage) {
         Voyage voyage = voyageRepository.findById(idVoyage).get();
 

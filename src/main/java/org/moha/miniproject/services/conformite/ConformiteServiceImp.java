@@ -19,6 +19,7 @@ public class ConformiteServiceImp implements ConformiteService {
     @Autowired
     private VehiculeRepository vehiculeRepository;
 
+    @Override
     public boolean isVehiculeConforme(Long idVehicule, char type) {
         Vehicule vehicule = vehiculeRepository.findById(idVehicule).get();
 
@@ -28,6 +29,7 @@ public class ConformiteServiceImp implements ConformiteService {
         return false;
     }
 
+    @Override
     public boolean isConducteurConforme(Long idConducteur, char typePermis) {
         Conducteur conducteur = conducteurRepository.findById(idConducteur).get();
 
