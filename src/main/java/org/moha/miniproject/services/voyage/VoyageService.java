@@ -1,15 +1,16 @@
 package org.moha.miniproject.services.voyage;
 
-import java.util.List;
-
 import org.moha.miniproject.enteties.Voyage;
 
+import java.util.List;
+
 public interface VoyageService {
-  List<Voyage> getAllTrips();
+    public List<Voyage> getVoyages();
+    public Voyage createVoyage(Voyage voyage);
+    public Voyage getVoyageById(Long voyageId);
 
-  Voyage getTripById(Long tripId);
+    public Voyage updateVoyage(Voyage voyage);
 
-  Voyage saveTrip(Voyage voyage);
+    public void deleteVoyage(Long voyageId);
 
-  void deleteTrip(Long tripId);
 }

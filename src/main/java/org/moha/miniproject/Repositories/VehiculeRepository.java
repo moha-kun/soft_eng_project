@@ -22,4 +22,9 @@ public interface VehiculeRepository extends JpaRepository<Vehicule, Long>, CrudR
                         "OR EXISTS (SELECT vo.vehicule FROM Voyage vo WHERE vo.vehicule = vh AND (:dateD >= vo.dateArrivee OR :dateA <= vo.dateDepart))")
         public List<Vehicule> getDiponibleVehicule(LocalDate dateD, LocalDate dateA);
 
+        @Query("SELECT vh FROM Vehicule vh " +
+                "WHERE NOT EXISTS (SELECT vo.vehicule FROM Voyage vo WHERE vo.vehicule = vh AND vo.idVoyage <> :idVoyage) " +
+                "OR EXISTS (SELECT vo.vehicule FROM Voyage vo WHERE vo.vehicule = vh AND (:dateD >= vo.dateArrivee OR :dateA <= vo.dateDepart))")
+        public List<Vehicule> getDiponibleVehiculeAndIgnoreVoyage(LocalDate dateD, LocalDate dateA, Long idVoyage);
+
 }

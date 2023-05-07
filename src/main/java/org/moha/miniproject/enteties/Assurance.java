@@ -1,5 +1,6 @@
 package org.moha.miniproject.enteties;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -29,7 +30,8 @@ public class Assurance {
     @Column(name = "image_scannee")
     private String imageScannee;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_vehicule")
+    @JsonIgnore
     private Vehicule vehicule;
 }

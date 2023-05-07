@@ -14,4 +14,9 @@ public interface ConducteurRepository extends JpaRepository<Conducteur, Long>, C
             "WHERE NOT EXISTS (SELECT vo.conducteur FROM Voyage vo WHERE vo.conducteur = c) " +
             "OR EXISTS (SELECT vo.conducteur FROM Voyage vo WHERE vo.conducteur = c AND (:dateD >= vo.dateArrivee OR :dateA <= vo.dateDepart))")
     List<Conducteur> getDisponibleConducteur(LocalDate dateD, LocalDate dateA);
+
+    @Query("SELECT c FROM Conducteur c " +
+            "WHERE NOT EXISTS (SELECT vo.conducteur FROM Voyage vo WHERE vo.conducteur = c AND vo.idVoyage <> :idVoyage) " +
+            "OR EXISTS (SELECT vo.conducteur FROM Voyage vo WHERE vo.conducteur = c AND (:dateD >= vo.dateArrivee OR :dateA <= vo.dateDepart))")
+    List<Conducteur> getDisponibleConducteurAndIgnoreVoyage(LocalDate dateD, LocalDate dateA, Long idVoyage);
 }
