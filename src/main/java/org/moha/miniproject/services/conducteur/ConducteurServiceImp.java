@@ -12,13 +12,6 @@ public class ConducteurServiceImp implements ConducteurService {
 
     @Autowired
     private ConducteurRepository conducteurRepository;
-
-    @Override
-    public List<Conducteur> getAvaiblableDrivers() {
-        // TODO
-        return null;
-    }
-
     @Override
     public List<Conducteur> getAllDrivers() {
         return this.conducteurRepository.findAll();
