@@ -1,4 +1,4 @@
-package org.moha.miniproject.services;
+package org.moha.miniproject.services.conformite;
 
 import org.moha.miniproject.Repositories.ConducteurRepository;
 import org.moha.miniproject.Repositories.VehiculeRepository;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class ConformiteService {
+public class ConformiteServiceImp implements ConformiteService {
 
     @Autowired
     private ConducteurRepository conducteurRepository;
@@ -19,22 +19,27 @@ public class ConformiteService {
     @Autowired
     private VehiculeRepository vehiculeRepository;
 
-
+    @Override
     public boolean isVehiculeConforme(Long idVehicule, char type) {
         Vehicule vehicule = vehiculeRepository.findById(idVehicule).get();
-        if(vehicule.getCategorie() == type)
+
+        if (vehicule.getCategorie() == type)
             return true;
+
         return false;
     }
 
-
+    @Override
     public boolean isConducteurConforme(Long idConducteur, char typePermis) {
         Conducteur conducteur = conducteurRepository.findById(idConducteur).get();
+
         List<Permis> permisList = conducteur.getPermis();
-        for(Permis permis : permisList) {
-            if(permis.getType() == typePermis)
+
+        for (Permis permis : permisList) {
+            if (permis.getType() == typePermis)
                 return true;
         }
+
         return false;
     }
 }
