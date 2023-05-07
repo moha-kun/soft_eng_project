@@ -13,8 +13,34 @@ public class ConducteurServiceImp implements ConducteurService {
     @Autowired
     private ConducteurRepository conducteurRepository;
 
-    public List<Conducteur> getConducteurs() {
-        return conducteurRepository.findAll();
+    @Override
+    public List<Conducteur> getAvaiblableDrivers() {
+        // TODO
+        return null;
+    }
+
+    @Override
+    public List<Conducteur> getAllDrivers() {
+        return this.conducteurRepository.findAll();
+    }
+
+    @Override
+    public Conducteur getDriverById(Long driverId) {
+        Conducteur conducteur = this.conducteurRepository.findById(driverId).orElse(null);
+        if (conducteur == null) {
+            throw new RuntimeException("No driver with such id");
+        }
+        return conducteur;
+    }
+
+    @Override
+    public Conducteur saveDriver(Conducteur conducteur) {
+        return this.conducteurRepository.save(conducteur);
+    }
+
+    @Override
+    public void removeDriver(Long driverId) {
+        this.conducteurRepository.deleteById(driverId);
     }
 
 }

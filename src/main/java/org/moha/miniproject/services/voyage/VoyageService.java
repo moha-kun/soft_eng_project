@@ -12,4 +12,5 @@ public interface VoyageService {
     public Voyage updateVoyage(Voyage voyage);
 
     public void deleteVoyage(Long voyageId);
+
 }

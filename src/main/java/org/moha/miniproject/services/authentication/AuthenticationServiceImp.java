@@ -24,6 +24,7 @@ public class AuthenticationServiceImp implements AuthenticationService {
         private AuthenticationManager authenticationManager;
 
         // TODO re-implement the method since you made User class abstract
+        @Override
         public AuthenticationResponse register(RegisterRequest request) {
                 /*
                  * var user = User.builder()
@@ -43,6 +44,7 @@ public class AuthenticationServiceImp implements AuthenticationService {
                 return null;
         }
 
+        @Override
         public AuthenticationResponse authenticate(AuthenticationRequest request) {
                 var user = userRepository.findByEmail(request.getEmail())
                                 .orElseThrow(() -> new RuntimeException("User not found"));
