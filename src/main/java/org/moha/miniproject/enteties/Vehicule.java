@@ -1,6 +1,6 @@
 package org.moha.miniproject.enteties;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -35,23 +34,19 @@ public class Vehicule {
     @Column(name = "categorie")
     private Character categorie;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "vehicule")
-    @JsonManagedReference(value = "vehicule_voyage")
+    @OneToMany(mappedBy = "vehicule")
+    @JsonIgnore
     private List<Voyage> voyages;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "vehicule")
-    @JsonManagedReference(value = "vehicule_carte_grise")
+    @OneToMany(mappedBy = "vehicule")
     private List<CarteGrise> carteGrises;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "vehicule")
-    @JsonManagedReference(value = "vehicule_assurance")
+    @OneToMany(mappedBy = "vehicule")
     private List<Assurance> assurances;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "vehicule")
-    @JsonManagedReference(value = "vehicule_visite_technique")
+    @OneToMany(mappedBy = "vehicule")
     private List<VisiteTechnique> visiteTechniques;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "vehicule")
-    @JsonManagedReference(value = "vehicule_vignette")
+    @OneToMany( mappedBy = "vehicule")
     private List<Vignette> vignettes;
 }

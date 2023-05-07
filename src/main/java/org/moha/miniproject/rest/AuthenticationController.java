@@ -3,6 +3,7 @@ package org.moha.miniproject.rest;
 import org.moha.miniproject.dto.AuthenticationRequest;
 import org.moha.miniproject.dto.AuthenticationResponse;
 import org.moha.miniproject.dto.RegisterRequest;
+import org.moha.miniproject.services.authentication.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,13 +19,19 @@ public class AuthenticationController {
     private AuthenticationService authenticationService;
 
     @PostMapping("/register")
-    public ResponseEntity<AuthenticationResponse> register(@RequestBody RegisterRequest request) {
-        return ResponseEntity.ok().body(authenticationService.register(request));
+    public ResponseEntity<AuthenticationResponse> register(
+            @RequestBody RegisterRequest request) {
+        return ResponseEntity
+                .ok()
+                .body(authenticationService.register(request));
     }
 
     @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request) {
-        return ResponseEntity.ok().body(authenticationService.authenticate(request));
+    public ResponseEntity<AuthenticationResponse> authenticate(
+            @RequestBody AuthenticationRequest request) {
+        return ResponseEntity
+                .ok()
+                .body(authenticationService.authenticate(request));
     }
 
 }

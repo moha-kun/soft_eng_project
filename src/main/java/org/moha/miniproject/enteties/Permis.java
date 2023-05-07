@@ -1,6 +1,6 @@
 package org.moha.miniproject.enteties;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Table(name = "permis")
@@ -31,8 +30,8 @@ public class Permis {
     @Column(name = "image_scannee")
     private String imageScannee;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne//(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_conducteur")
-    @JsonBackReference(value = "conducteur-permis")
+    @JsonIgnore
     private Conducteur conducteur;
 }

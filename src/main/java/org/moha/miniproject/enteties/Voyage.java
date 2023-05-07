@@ -9,7 +9,6 @@ import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 @Table(name = "voyage")
@@ -38,12 +37,12 @@ public class Voyage {
     @Column(name = "type_vehicule")
     private Character typeVehicule;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_conducteur")
     @JsonBackReference(value = "conducteur_voyage")
     private Conducteur conducteur;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "id_vehicule")
     @JsonBackReference(value = "vehicule_voyage")
     private Vehicule vehicule;
