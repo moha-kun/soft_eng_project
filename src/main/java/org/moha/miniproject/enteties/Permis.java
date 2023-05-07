@@ -1,5 +1,6 @@
 package org.moha.miniproject.enteties;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,5 +33,6 @@ public class Permis {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_conducteur")
+    @JsonBackReference
     private Conducteur conducteur;
 }

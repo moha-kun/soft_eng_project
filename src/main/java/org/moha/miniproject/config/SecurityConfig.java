@@ -27,7 +27,6 @@ public class SecurityConfig {
                 .authorizeHttpRequests()
                 .requestMatchers("/api/auth/**").permitAll()
                 .requestMatchers("/affectation/**").hasRole("MANAGER")
-
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement()

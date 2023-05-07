@@ -1,5 +1,6 @@
 package org.moha.miniproject.enteties;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,9 +26,11 @@ public class Conducteur extends User {
     private LocalDate dateNaissance;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "conducteur")
+    @JsonManagedReference
     private List<Permis> permis;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "conducteur")
+    @JsonManagedReference
     private List<Voyage> voyages;
 
 }

@@ -1,10 +1,12 @@
 package org.moha.miniproject.enteties;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
 import java.util.Date;
@@ -38,9 +40,11 @@ public class Voyage {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_conducteur")
+    @JsonBackReference
     private Conducteur conducteur;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_vehicule")
+    @JsonBackReference
     private Vehicule vehicule;
 }
