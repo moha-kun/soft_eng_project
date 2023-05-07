@@ -1,5 +1,6 @@
 package org.moha.miniproject.enteties;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -35,17 +36,22 @@ public class Vehicule {
     private Character categorie;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "vehicule")
+    @JsonManagedReference(value = "vehicule_voyage")
     private List<Voyage> voyages;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "vehicule")
+    @JsonManagedReference(value = "vehicule_carte_grise")
     private List<CarteGrise> carteGrises;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "vehicule")
+    @JsonManagedReference(value = "vehicule_assurance")
     private List<Assurance> assurances;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "vehicule")
+    @JsonManagedReference(value = "vehicule_visite_technique")
     private List<VisiteTechnique> visiteTechniques;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "vehicule")
+    @JsonManagedReference(value = "vehicule_vignette")
     private List<Vignette> vignettes;
 }

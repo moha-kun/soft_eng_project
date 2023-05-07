@@ -33,6 +33,6 @@ public class Permis {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_conducteur")
-    @JsonBackReference
+    @JsonBackReference(value = "conducteur-permis")
     private Conducteur conducteur;
 }

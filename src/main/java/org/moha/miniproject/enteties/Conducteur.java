@@ -26,11 +26,11 @@ public class Conducteur extends User {
     private LocalDate dateNaissance;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "conducteur")
-    @JsonManagedReference
+    @JsonManagedReference(value = "conducteur_permis")
     private List<Permis> permis;
 
     @OneToMany(fetch = FetchType.LAZY, mappedBy = "conducteur")
-    @JsonManagedReference
+    @JsonManagedReference(value = "conducteur_voyage")
     private List<Voyage> voyages;
 
 }

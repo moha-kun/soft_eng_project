@@ -40,11 +40,11 @@ public class Voyage {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_conducteur")
-    @JsonBackReference
+    @JsonBackReference(value = "conducteur_voyage")
     private Conducteur conducteur;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_vehicule")
-    @JsonBackReference
+    @JsonBackReference(value = "vehicule_voyage")
     private Vehicule vehicule;
 }
