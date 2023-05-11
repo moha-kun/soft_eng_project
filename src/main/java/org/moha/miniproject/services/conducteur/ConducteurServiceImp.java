@@ -74,4 +74,9 @@ public class ConducteurServiceImp implements ConducteurService {
         this.conducteurRepository.deleteById(driverId);
     }
 
+
+    private boolean checkUser(Long idConducteur) {
+        return true;
+    }
+
 }

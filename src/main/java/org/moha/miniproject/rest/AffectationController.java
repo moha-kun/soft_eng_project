@@ -14,14 +14,14 @@ public class AffectationController {
     private AffectationService affectationService;
 
     @PostMapping("/conducteur")
-    public String affecterConducteur(@RequestBody CondVoyDTO dto) {
+    public String affecterConducteur(@RequestBody CondVoyDTO dto) throws Exception {
         return affectationService.affecterConducteur(
                 dto.getIdConducteur(),
                 dto.getIdVoyage());
     }
 
     @PostMapping("/vehicule")
-    public String affecterVehicule(@RequestBody VehVoyDTO dto) {
+    public String affecterVehicule(@RequestBody VehVoyDTO dto) throws Exception {
         return affectationService.affecterVehicule(
                 dto.getIdVehicule(),
                 dto.getIdVoyage());
