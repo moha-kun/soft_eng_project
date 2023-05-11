@@ -30,7 +30,7 @@ public class AffectationServiceImp implements AffectationService {
     private VehiculeRepository vehiculeRepository;
 
     @Override
-    public String affecterConducteur(Long idConducteur, Long idVoyage) {
+    public String affecterConducteur(Long idConducteur, Long idVoyage) throws Exception {
         Voyage voyage = voyageRepository.findById(idVoyage).get();
 
         Conducteur conducteur = conducteurRepository.findById(idConducteur).get();
@@ -42,17 +42,19 @@ public class AffectationServiceImp implements AffectationService {
         boolean isConfo = conformiteService.isConducteurConforme(
                 idConducteur, voyage.getTypeVehicule());
 
-        if (isConfo && isDispo) {
-            voyage.setConducteur(conducteur);
-            voyageRepository.save(voyage);
-            return "Done Successfully!";
+        if (isConfo) {
+            if (isDispo) {
+                voyage.setConducteur(conducteur);
+                voyageRepository.save(voyage);
+                return "Done Successfully!";
+            }
+            throw new Exception("Le conducteur n'est pas disponible");
         }
-
-        return "Successful ERROR!";
+        throw new Exception("Le conducteur n'est pas conforme");
     }
 
     @Override
-    public String affecterVehicule(Long idVehicule, Long idVoyage) {
+    public String affecterVehicule(Long idVehicule, Long idVoyage) throws Exception {
         Voyage voyage = voyageRepository.findById(idVoyage).get();
 
         Vehicule vehicule = vehiculeRepository.findById(idVehicule).get();
@@ -64,13 +66,15 @@ public class AffectationServiceImp implements AffectationService {
         boolean isConfo = conformiteService.isVehiculeConforme(
                 idVehicule, voyage.getTypeVehicule());
 
-        if (isConfo && isDispo) {
-            voyage.setVehicule(vehicule);
-            voyageRepository.save(voyage);
-            return "Done Successfully!";
+        if (isConfo) {
+            if (isDispo) {
+                voyage.setVehicule(vehicule);
+                voyageRepository.save(voyage);
+                return "Done Successfully!";
+            }
+            throw new Exception("Le vehicule n'est pas disponible");
         }
-
-        return "Successful ERROR!";
+        throw new Exception("Le vehicule n'est pas conforme");
     }
 
 }

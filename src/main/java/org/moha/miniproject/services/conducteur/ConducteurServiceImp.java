@@ -3,6 +3,7 @@ package org.moha.miniproject.services.conducteur;
 import org.moha.miniproject.Repositories.ConducteurRepository;
 import org.moha.miniproject.enteties.Conducteur;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,6 +35,11 @@ public class ConducteurServiceImp implements ConducteurService {
     @Override
     public void removeDriver(Long driverId) {
         this.conducteurRepository.deleteById(driverId);
+    }
+
+
+    private boolean checkUser(Long idConducteur) {
+        return true;
     }
 
 }

@@ -1,9 +1,11 @@
 package org.moha.miniproject.rest;
 
+import org.moha.miniproject.Repositories.UserRepository;
 import org.moha.miniproject.enteties.Conducteur;
 import org.moha.miniproject.services.conducteur.ConducteurService;
-import org.moha.miniproject.services.conducteur.ConducteurServiceImp;
+import org.moha.miniproject.services.verification.UserVerification;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +14,13 @@ import java.util.List;
 public class ConducteurController {
 
     @Autowired
+    private UserVerification userVerification;
+
+    @Autowired
     private ConducteurService conducteurService;
+
+    @Autowired
+    private UserRepository userRepository;
 
     @GetMapping("/conducteurs")
     public List<Conducteur> getConducteurs() {
@@ -25,13 +33,16 @@ public class ConducteurController {
     @GetMapping("/conducteurs/{idCond}")
     public Conducteur getConducteur(@PathVariable Long idCond){return conducteurService.getDriverById(idCond);}
 
-    @PutMapping("/conducteurs/{idCond}")
-    public Conducteur updateConducteur(@PathVariable Long idCond, @RequestBody Conducteur cond){
-        cond.setId(idCond);
+    @PutMapping("/conducteurs")
+    @PreAuthorize("@userVerification.checkUser(#cond.getId())")
+    public Conducteur updateConducteur(@RequestBody Conducteur cond){
         return conducteurService.saveDriver(cond);
     }
 
     @DeleteMapping("/conducteurs/{idCond}")
-    public void deleteConducteur(@PathVariable Long idCond){conducteurService.removeDriver(idCond);}
+    @PreAuthorize("@userVerification.checkUser(#idCond)")
+    public void deleteConducteur(@PathVariable Long idCond){
+        conducteurService.removeDriver(idCond);
+    }
 
 }
