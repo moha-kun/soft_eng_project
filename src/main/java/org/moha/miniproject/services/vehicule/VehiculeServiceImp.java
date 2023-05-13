@@ -12,20 +12,11 @@ public class VehiculeServiceImp implements VehiculeService {
   @Autowired
   private VehiculeRepository vehiculeRepository;
 
-  public VehiculeServiceImp(VehiculeRepository vehiculeRepository) {
-    this.vehiculeRepository = vehiculeRepository;
-  }
-
   @Override
   public List<Vehicule> getAllVehicles() {
     return vehiculeRepository.findAll();
   }
 
-  @Override
-  public List<Vehicule> getAvailableVehicles() {
-    // TODO
-    return null;
-  }
 
   @Override
   public Vehicule getVehicleById(Long vehicleId) {

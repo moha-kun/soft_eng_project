@@ -1,6 +1,5 @@
 package org.moha.miniproject.services.voyage;
 
-import org.moha.miniproject.Repositories.ConducteurRepository;
 import org.moha.miniproject.Repositories.VoyageRepository;
 import org.moha.miniproject.enteties.Conducteur;
 import org.moha.miniproject.enteties.Vehicule;
@@ -14,11 +13,9 @@ import java.util.List;
 
 @Service
 public class VoyageServiceImpl implements VoyageService{
-    @Autowired
-    private VoyageRepository voyageRepository;
 
     @Autowired
-    private ConducteurRepository conducteurRepository;
+    private VoyageRepository voyageRepository;
 
     @Autowired
     private DisponibiliteService disponibiliteService;
@@ -26,19 +23,19 @@ public class VoyageServiceImpl implements VoyageService{
     @Autowired
     private ConformiteService conformiteService;
 
+    @Override
     public List<Voyage> getVoyages(){
-      List<Voyage> voyageList = voyageRepository.findAll();
-      return voyageList;
-    };
+        return voyageRepository.findAll();
+    }
 
+    @Override
     public Voyage createVoyage(Voyage voyage){
-        Voyage v = voyageRepository.save(voyage);
-        return v;
+        return voyageRepository.save(voyage);
     }
 
     @Override
     public Voyage getVoyageById(Long voyageId) {
-        Voyage v = voyageRepository.findById(voyageId).get();
+        Voyage v = voyageRepository.findById(voyageId).orElse(null);
         if(v == null){
             throw new RuntimeException("Voyage with id " + voyageId + " not found!");
         }
@@ -48,7 +45,7 @@ public class VoyageServiceImpl implements VoyageService{
     @Override
     public Voyage updateVoyage(Voyage voyage) {
 
-        Voyage v = voyageRepository.findById(voyage.getIdVoyage()).get();
+        Voyage v = voyageRepository.findById(voyage.getIdVoyage()).orElse(null);
         if(v == null) throw new RuntimeException("Voyage with id " + voyage.getIdVoyage() + " not found");
 
         voyage.setConducteur(v.getConducteur());

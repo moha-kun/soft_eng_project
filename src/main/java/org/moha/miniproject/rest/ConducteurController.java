@@ -16,7 +16,7 @@ public class ConducteurController {
 
     @GetMapping("/conducteurs")
     public List<Conducteur> getConducteurs() {
-        return conducteurService.getConducteurs();
+        return conducteurService.getAllDrivers();
     }
 
 }
