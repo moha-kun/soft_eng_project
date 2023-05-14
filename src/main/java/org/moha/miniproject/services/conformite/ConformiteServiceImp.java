@@ -21,23 +21,26 @@ public class ConformiteServiceImp implements ConformiteService {
 
     @Override
     public boolean isVehiculeConforme(Long idVehicule, char type) {
-        Vehicule vehicule = vehiculeRepository.findById(idVehicule).get();
+        Vehicule vehicule = vehiculeRepository.findById(idVehicule).orElse(null);
 
-        if (vehicule.getCategorie() == type)
-            return true;
+        if(vehicule != null) {
+            return vehicule.getCategorie() == type;
+        }
 
         return false;
     }
 
     @Override
     public boolean isConducteurConforme(Long idConducteur, char typePermis) {
-        Conducteur conducteur = conducteurRepository.findById(idConducteur).get();
+        Conducteur conducteur = conducteurRepository.findById(idConducteur).orElse(null);
 
-        List<Permis> permisList = conducteur.getPermis();
+        if(conducteur != null) {
+            List<Permis> permisList = conducteur.getPermis();
 
-        for (Permis permis : permisList) {
-            if (permis.getType() == typePermis)
-                return true;
+            for (Permis permis : permisList) {
+                if (permis.getType() == typePermis)
+                    return true;
+            }
         }
 
         return false;
