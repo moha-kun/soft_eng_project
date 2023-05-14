@@ -33,7 +33,7 @@ public class Voyage {
     private LocalDate dateArrivee;
 
     @Column(name = "type_vehicule")
-    private Character typeVehicule;
+    private String typeVehicule;
 
     @ManyToOne
     @JoinColumn(name = "id_conducteur")

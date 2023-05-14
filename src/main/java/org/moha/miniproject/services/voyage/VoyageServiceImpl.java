@@ -5,6 +5,7 @@ import org.moha.miniproject.enteties.Conducteur;
 import org.moha.miniproject.enteties.Vehicule;
 import org.moha.miniproject.enteties.Voyage;
 import org.moha.miniproject.services.conformite.ConformiteService;
+import org.moha.miniproject.services.correspondance.CorrespondanceService;
 import org.moha.miniproject.services.disponibilite.DisponibiliteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,6 +22,9 @@ public class VoyageServiceImpl implements VoyageService {
 
     @Autowired
     private ConformiteService conformiteService;
+
+    @Autowired
+    private CorrespondanceService correspondanceService;
 
     @Override
     public List<Voyage> getVoyages() {
@@ -65,14 +69,16 @@ public class VoyageServiceImpl implements VoyageService {
         if (c != null) {
             isCondDispo = disponibiliteService.isConducteurDisponible(c.getId(), voyage.getDateDepart(),
                     voyage.getDateArrivee(), voyage.getIdVoyage());
-            isCondConform = conformiteService.isConducteurConforme(c.getId(), voyage.getTypeVehicule());
+            isCondConform = conformiteService.isConducteurConforme(c.getId(),
+                    correspondanceService.correspondanceTypeVehicule(voyage.getTypeVehicule()));
         }
 
         if (vehicule != null) {
             isVehiculeConform = conformiteService.isVehiculeConforme(vehicule.getIdVehicule(),
-                    voyage.getTypeVehicule());
+                    correspondanceService.correspondanceTypeVehicule(voyage.getTypeVehicule()));
             isVehiculeDispo = disponibiliteService.isVehiculeDisponible(vehicule.getIdVehicule(),
                     voyage.getDateDepart(), voyage.getDateArrivee(), voyage.getIdVoyage());
+
         }
 
         if (isCondConform && isCondDispo && isVehiculeConform && isVehiculeDispo) {

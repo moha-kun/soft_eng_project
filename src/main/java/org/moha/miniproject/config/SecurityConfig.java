@@ -4,6 +4,7 @@ import org.moha.miniproject.filters.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -28,10 +29,17 @@ public class SecurityConfig {
         http
                 .csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/auth/**")
-                .permitAll()
-                .requestMatchers("/affectation/**")
-                .hasAnyRole("MANAGER", "ADMIN")
+                .requestMatchers("/auth/**").permitAll()
+                .requestMatchers("/affectation/**").hasAnyRole("MANAGER", "ADMIN")
+                .requestMatchers("/voyages/**").hasAnyRole("MANAGER", "ADMIN")
+                .requestMatchers(HttpMethod.GET, "/conducteurs/**").hasAnyRole("MANAGER", "ADMIN")
+                .requestMatchers(HttpMethod.POST, "/conducteurs/**").hasAnyRole("MANAGER", "ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "/conducteurs/**").hasAnyRole("MANAGER", "ADMIN")
+                .requestMatchers(HttpMethod.GET, "/managers/**").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.POST, "/managers/**").hasRole("ADMIN")
+                .requestMatchers(HttpMethod.DELETE, "/managers/**").hasRole("ADMIN")
+                .requestMatchers("/vehicules/**").hasAnyRole("MANAGER", "ADMIN")
+                .requestMatchers("/voyages/**").hasAnyRole("MANAGER", "ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement()
