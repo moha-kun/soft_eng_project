@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.extern.slf4j.Slf4j;
 
 import java.time.LocalDate;
 
@@ -35,7 +34,7 @@ public class Voyage {
     private LocalDate dateArrivee;
 
     @Column(name = "type_vehicule")
-    private Character typeVehicule;
+    private String typeVehicule;
 
     @ManyToOne
     @JoinColumn(name = "id_conducteur")
