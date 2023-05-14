@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!--Standard output appender-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                %d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %logger{36}.%M - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!--App logs(level=TRACE)-->
+    <appender name="APP_TRACE_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/app-general.log</file>
+        <append>true</append>
+        <immediateFlush>true</immediateFlush>
+        <encoder>
+            <pattern>
+                %d{hh:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!--App logs(level=ERROR)-->
+    <appender name="APP_ERROR_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/app-errors.log</file>
+        <append>true</append>
+        <immediateFlush>true</immediateFlush>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <encoder>
+            <pattern>
+                %d{hh:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!--HTTP logs(level=TRACE)-->
+    <appender name="HTTP_TRACE_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/http-combined.log</file>
+        <append>true</append>
+        <immediateFlush>true</immediateFlush>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>TRACE</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <encoder>
+            <pattern>
+                %d{hh:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!--HTTP logs(level=ERROR)-->
+    <appender name="HTTP_ERROR_FILE" class="ch.qos.logback.core.FileAppender">
+        <file>logs/http-errors.log</file>
+        <append>true</append>
+        <immediateFlush>true</immediateFlush>
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+        <encoder>
+            <pattern>
+                %d{hh:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!--HTTP logs-->
+    <logger name="org.zalando.logbook" level="TRACE" additivity="false">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="APP_TRACE_FILE" />
+        <appender-ref ref="APP_ERROR_FILE" />
+        <appender-ref ref="HTTP_TRACE_FILE" />
+        <appender-ref ref="HTTP_ERROR_FILE" />
+    </logger>
+
+    <!--APP logs-->
+    <logger name="org.moha.miniproject" level="TRACE" additivity="false">
+        <appender-ref ref="STDOUT" />
+        <appender-ref ref="APP_TRACE_FILE" />
+        <appender-ref ref="APP_ERROR_FILE" />
+    </logger>
+
+    <!--SPRING LOGS-->
+    <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="APP_TRACE_FILE" />
+        <appender-ref ref="APP_ERROR_FILE" />
+    </root>
+</configuration>

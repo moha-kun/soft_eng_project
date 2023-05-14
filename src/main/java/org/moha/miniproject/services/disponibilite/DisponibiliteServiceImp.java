@@ -26,6 +26,7 @@ public class DisponibiliteServiceImp implements DisponibiliteService {
             LocalDate dateArrive) {
         return isConducteurDisponible(idConducteur, dateDepart, dateArrive, null);
     }
+
     public boolean isConducteurDisponible(
             Long idConducteur,
             LocalDate dateDepart,
@@ -33,10 +34,10 @@ public class DisponibiliteServiceImp implements DisponibiliteService {
             Long idVoyage) {
 
         List<Conducteur> conducteurs = null;
-        if(idVoyage == null){
+        if (idVoyage == null) {
             conducteurs = conducteurRepository
                     .getDisponibleConducteur(dateDepart, dateArrive);
-        }else{
+        } else {
             conducteurs = conducteurRepository
                     .getDisponibleConducteurAndIgnoreVoyage(dateDepart, dateArrive, idVoyage);
         }
@@ -50,8 +51,11 @@ public class DisponibiliteServiceImp implements DisponibiliteService {
     }
 
     @Override
-    public boolean isVehiculeDisponible(Long idVehicule,
-            LocalDate dateDepart, LocalDate dateArrive) {
+    public boolean isVehiculeDisponible(
+            Long idVehicule,
+            LocalDate dateDepart,
+            LocalDate dateArrive
+    ) {
         return isVehiculeDisponible(idVehicule, dateDepart, dateArrive);
     }
 
@@ -59,10 +63,10 @@ public class DisponibiliteServiceImp implements DisponibiliteService {
     public boolean isVehiculeDisponible(Long idVehicule, LocalDate dateDepart, LocalDate dateArrive, Long idVoyage) {
         List<Vehicule> vehicules = null;
 
-        if(idVoyage == null){
+        if (idVoyage == null) {
             vehicules = vehiculeRepository
                     .getDiponibleVehicule(dateDepart, dateArrive);
-        }else{
+        } else {
             vehicules = vehiculeRepository
                     .getDiponibleVehiculeAndIgnoreVoyage(dateDepart, dateArrive, idVoyage);
         }

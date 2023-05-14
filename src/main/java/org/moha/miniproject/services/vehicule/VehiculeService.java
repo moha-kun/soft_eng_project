@@ -6,9 +6,7 @@ import org.moha.miniproject.enteties.Vehicule;
 
 public interface VehiculeService {
   List<Vehicule> getAllVehicles();
-
-  List<Vehicule> getAvailableVehicles();
-
+  
   Vehicule getVehicleById(Long vehicleId);
 
   Vehicule saveVehicle(Vehicule vehicule);

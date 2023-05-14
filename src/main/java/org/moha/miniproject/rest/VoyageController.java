@@ -1,6 +1,5 @@
 package org.moha.miniproject.rest;
 
-import ch.qos.logback.core.net.SyslogOutputStream;
 import org.moha.miniproject.enteties.Voyage;
 import org.moha.miniproject.services.voyage.VoyageService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,13 +14,11 @@ public class VoyageController {
 
     @GetMapping("/voyages")
     public List<Voyage> getVoyages(){
-        List<Voyage> voyageList = voyageService.getVoyages();
-        return voyageList;
+        return voyageService.getVoyages();
     }
     @GetMapping("/voyages/{voyageId}")
     public Voyage getVoyage(@PathVariable("voyageId") Long voyageId){
-        Voyage v = voyageService.getVoyageById(voyageId);
-        return v;
+        return voyageService.getVoyageById(voyageId);
     }
     @PostMapping("/voyages")
     public Voyage createVoyage(@RequestBody Voyage voyage){

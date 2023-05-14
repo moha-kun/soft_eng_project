@@ -36,11 +36,13 @@ public class ConformiteServiceImp implements ConformiteService {
     public boolean isConducteurConforme(Long idConducteur, char typePermis) {
         Conducteur conducteur = conducteurService.getDriverById(idConducteur);
 
-        List<Permis> permisList = conducteur.getPermis();
+        if(conducteur != null) {
+            List<Permis> permisList = conducteur.getPermis();
 
-        for (Permis permis : permisList) {
-            if (permis.getType() == typePermis)
-                return true;
+            for (Permis permis : permisList) {
+                if (permis.getType() == typePermis)
+                    return true;
+            }
         }
 
         return false;
