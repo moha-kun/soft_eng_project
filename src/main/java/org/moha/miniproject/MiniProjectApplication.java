@@ -10,6 +10,7 @@ public class MiniProjectApplication {
         SpringApplication.run(MiniProjectApplication.class, args);
     }
 
+    // TODO: remove this giant thing
     // @Bean
     // CommandLineRunner run(UserService userService) {
     // return args -> {

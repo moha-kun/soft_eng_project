@@ -9,7 +9,6 @@ import org.moha.miniproject.enteties.Voyage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -18,8 +17,11 @@ public class ConducteurServiceImp implements ConducteurService {
     @Autowired
     private ConducteurRepository conducteurRepository;
 
+<<<<<<< HEAD
     @Autowired
     private VoyageRepository voyageRepository;
+=======
+>>>>>>> 112282f97c56b838a128d1c0fbf893d15161a89f
     @Autowired
     private PasswordEncoder passwordEncoder;
 
@@ -36,41 +38,42 @@ public class ConducteurServiceImp implements ConducteurService {
         }
         return conducteur;
     }
+
     @Override
     public Conducteur saveDriver(Conducteur conducteur) {
         Conducteur cond = conducteurRepository.findConducteurByEmail(conducteur.getEmail());
-        if(cond != null){
+        if (cond != null) {
             throw new RuntimeException("Email is already taken");
         }
-        //Encrypt password
+        // Encrypt password
         conducteur.setPassword(passwordEncoder.encode(conducteur.getPassword()));
 
-        //For security reasons we need to reset role
+        // For security reasons we need to reset role
         conducteur.setRole(Role.ROLE_CONDUCTOR);
 
         return this.conducteurRepository.save(conducteur);
     }
+
     @Override
-    public Conducteur updateDriver(Conducteur conducteur){
+    public Conducteur updateDriver(Conducteur conducteur) {
         Conducteur oldCond = getDriverById(conducteur.getId());
-        //We don't want to input the password everytime we want to update
+        // We don't want to input the password everytime we want to update
         conducteur.setPassword(oldCond.getPassword());
 
         return conducteurRepository.save(conducteur);
     }
 
     @Override
-    public Conducteur updateDriverPassword(Long driverId, PasswordUpdateDTO passwordUpdateDTO){
+    public Conducteur updateDriverPassword(Long driverId, PasswordUpdateDTO passwordUpdateDTO) {
         Conducteur oldCond = getDriverById(driverId);
 
         boolean passCheck = passwordEncoder.matches(passwordUpdateDTO.getOldPassword(), oldCond.getPassword());
-        if(!passCheck){
+        if (!passCheck) {
             throw new RuntimeException("Old password is incorrect");
         }
 
         oldCond.setPassword(
-                passwordEncoder.encode(passwordUpdateDTO.getNewPassword())
-        );
+                passwordEncoder.encode(passwordUpdateDTO.getNewPassword()));
         return conducteurRepository.save(oldCond);
     }
 
@@ -84,7 +87,6 @@ public class ConducteurServiceImp implements ConducteurService {
             });
         this.conducteurRepository.deleteById(driverId);
     }
-
 
     private boolean checkUser(Long idConducteur) {
         return true;

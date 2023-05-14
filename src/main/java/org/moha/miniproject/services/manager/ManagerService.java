@@ -2,11 +2,8 @@ package org.moha.miniproject.services.manager;
 
 import org.moha.miniproject.dto.PasswordUpdateDTO;
 import org.moha.miniproject.enteties.Manager;
-import org.springframework.stereotype.Service;
-
 import java.util.List;
 
-@Service
 public interface ManagerService {
     List<Manager> getAllManagers();
 

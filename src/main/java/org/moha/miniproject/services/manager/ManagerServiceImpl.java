@@ -7,7 +7,6 @@ import org.moha.miniproject.enteties.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -20,23 +19,24 @@ public class ManagerServiceImpl implements ManagerService {
     private PasswordEncoder passwordEncoder;
 
     @Override
-    public List<Manager> getAllManagers(){
+    public List<Manager> getAllManagers() {
         return managerRepository.findAll();
     }
+
     @Override
-    public Manager getManagerById(Long managerId){
+    public Manager getManagerById(Long managerId) {
         Manager manager = managerRepository.findById(managerId).orElse(null);
-        if(manager == null)
+        if (manager == null)
             throw new RuntimeException("Manager with id " + managerId + " not found.");
 
         return manager;
     }
 
     @Override
-    public Manager saveManager(Manager manager){
+    public Manager saveManager(Manager manager) {
         Manager manager1 = managerRepository.getManagersByEmail(manager.getEmail());
-        if(manager1 != null)
-            throw new RuntimeException("Email" + manager.getEmail() +" is already taken.");
+        if (manager1 != null)
+            throw new RuntimeException("Email" + manager.getEmail() + " is already taken.");
         manager.setPassword(passwordEncoder.encode(manager.getPassword()));
 
         manager.setRole(Role.ROLE_MANAGER);
@@ -44,7 +44,7 @@ public class ManagerServiceImpl implements ManagerService {
     }
 
     @Override
-    public Manager updateManager(Manager manager){
+    public Manager updateManager(Manager manager) {
         Manager oldManager = getManagerById(manager.getId());
 
         manager.setPassword(oldManager.getPassword());
@@ -52,11 +52,11 @@ public class ManagerServiceImpl implements ManagerService {
     }
 
     @Override
-    public Manager updateManagerPassword(Long managerId, PasswordUpdateDTO passwordUpdateDTO){
+    public Manager updateManagerPassword(Long managerId, PasswordUpdateDTO passwordUpdateDTO) {
         Manager oldMan = getManagerById(managerId);
 
         boolean passCheck = passwordEncoder.matches(passwordUpdateDTO.getOldPassword(), oldMan.getPassword());
-        if(!passCheck)
+        if (!passCheck)
             throw new RuntimeException("Old password is incorrect");
 
         oldMan.setPassword(passwordUpdateDTO.getNewPassword());
@@ -64,7 +64,7 @@ public class ManagerServiceImpl implements ManagerService {
     }
 
     @Override
-    public void removeManager(Long managerId){
+    public void removeManager(Long managerId) {
         managerRepository.deleteById(managerId);
     }
 }

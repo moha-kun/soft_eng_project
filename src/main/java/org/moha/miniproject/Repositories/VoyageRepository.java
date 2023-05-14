@@ -6,6 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 
 public interface VoyageRepository extends JpaRepository<Voyage, Long> {
+<<<<<<< HEAD
 
     public List<Voyage> findVoyagesByConducteur(Long conducteurId);
     public List<Voyage> findVoyagesByVehicule(Long vehiculeId);

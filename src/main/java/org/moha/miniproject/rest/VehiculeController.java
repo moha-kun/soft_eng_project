@@ -10,6 +10,7 @@ import java.time.LocalDate;
 import java.util.List;
 
 @RestController
+@RequestMapping("/vehicules")
 public class VehiculeController {
 
     @Autowired
@@ -17,36 +18,37 @@ public class VehiculeController {
 
     @Autowired
     private DisponibiliteService disponibiliteService;
-    @GetMapping("/vehicules")
-    public List<Vehicule> getVehicules(){
+
+    @GetMapping("")
+    public List<Vehicule> getVehicules() {
         return vehiculeService.getAllVehicles();
     }
 
-    @GetMapping("/vehicules/disponible")
+    @GetMapping("/disponible")
     public List<Vehicule> getDisponibleVehicules(
             @RequestParam(name = "dateDepart") LocalDate dateDepart,
-            @RequestParam(name = "dateArrive")LocalDate dateArrive){
+            @RequestParam(name = "dateArrive") LocalDate dateArrive) {
         return disponibiliteService.getAvailableVehicules(dateDepart, dateArrive);
     }
 
-    @GetMapping("/vehicules/{vehiculeId}")
-    public Vehicule getVehiculeById(@PathVariable Long vehiculeId){
+    @GetMapping("/{vehiculeId}")
+    public Vehicule getVehiculeById(@PathVariable Long vehiculeId) {
         return vehiculeService.getVehicleById(vehiculeId);
     }
 
-    @PostMapping("/vehicules")
-    public Vehicule createVehicule(@RequestBody Vehicule vehicule){
+    @PostMapping("")
+    public Vehicule createVehicule(@RequestBody Vehicule vehicule) {
         return vehiculeService.saveVehicle(vehicule);
     }
 
-    @PutMapping("/vehicules/{vehiculeId}")
-    public Vehicule updateVehicule(@PathVariable Long vehiculeId, @RequestBody Vehicule vehicule){
+    @PutMapping("/{vehiculeId}")
+    public Vehicule updateVehicule(@PathVariable Long vehiculeId, @RequestBody Vehicule vehicule) {
         vehicule.setIdVehicule(vehiculeId);
         return vehiculeService.saveVehicle(vehicule);
     }
 
-    @DeleteMapping("/vehicules/{vehiculeId}")
-    public void deleteVehicule(@PathVariable Long vehiculeId){
+    @DeleteMapping("/{vehiculeId}")
+    public void deleteVehicule(@PathVariable Long vehiculeId) {
         vehiculeService.removeVehicle(vehiculeId);
     }
 }
