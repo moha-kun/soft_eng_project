@@ -25,7 +25,8 @@ public class Conducteur extends User {
     @Column(name = "date_naissance")
     private LocalDate dateNaissance;
 
-    @OneToMany(mappedBy = "conducteur")
+    @OneToMany(mappedBy = "conducteur",
+            cascade = CascadeType.ALL)
     private List<Permis> permis;
 
     @OneToMany(mappedBy = "conducteur")

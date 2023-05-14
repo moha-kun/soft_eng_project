@@ -53,7 +53,7 @@ public class ConducteurController {
     }
 
     @DeleteMapping("/conducteurs/{idCond}")
-    @PreAuthorize("@userVerification.checkUser(#idCond)")
+    @PreAuthorize("@userVerification.checkUser(#idCond) or hasAnyRole('MANAGER')")
     public void deleteConducteur(@PathVariable Long idCond){
         conducteurService.removeDriver(idCond);
     }
