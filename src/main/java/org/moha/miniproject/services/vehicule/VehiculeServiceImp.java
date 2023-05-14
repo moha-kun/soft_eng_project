@@ -1,7 +1,6 @@
 package org.moha.miniproject.services.vehicule;
 
 import java.util.List;
-
 import org.moha.miniproject.Repositories.VehiculeRepository;
 import org.moha.miniproject.enteties.Vehicule;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +15,6 @@ public class VehiculeServiceImp implements VehiculeService {
   public List<Vehicule> getAllVehicles() {
     return vehiculeRepository.findAll();
   }
-
 
   @Override
   public Vehicule getVehicleById(Long vehicleId) {

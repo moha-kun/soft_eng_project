@@ -9,36 +9,40 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/managers")
 public class ManagerController {
     @Autowired
     private ManagerService managerService;
 
-    @GetMapping("/managers")
+    @GetMapping("")
     public List<Manager> getManagers() {
         return managerService.getAllManagers();
     }
 
-    @PostMapping("/managers")
-    public Manager createManager(@RequestBody Manager man){
+    @PostMapping("")
+    public Manager createManager(@RequestBody Manager man) {
         return managerService.saveManager(man);
     }
 
-    @GetMapping("/managers/{managerId}")
-    public Manager getManager(@PathVariable Long managerId){return managerService.getManagerById(managerId);}
+    @GetMapping("/{managerId}")
+    public Manager getManager(@PathVariable Long managerId) {
+        return managerService.getManagerById(managerId);
+    }
 
-    @PutMapping("/managers/{managerId}")
-    public Manager updateManager(@PathVariable Long managerId, @RequestBody Manager man){
+    @PutMapping("/{managerId}")
+    public Manager updateManager(@PathVariable Long managerId, @RequestBody Manager man) {
         man.setId(managerId);
         return managerService.updateManager(man);
     }
 
-    @PutMapping("/managers/{managerId}/password")
-    public Manager updateManagerPassword(@PathVariable Long managerId, @RequestBody PasswordUpdateDTO passwordUpdateDTO){
+    @PutMapping("/{managerId}/password")
+    public Manager updateManagerPassword(@PathVariable Long managerId,
+            @RequestBody PasswordUpdateDTO passwordUpdateDTO) {
         return managerService.updateManagerPassword(managerId, passwordUpdateDTO);
     }
 
-    @DeleteMapping("/managers/{managerId}")
-    public void deleteManager(@PathVariable Long managerId){
+    @DeleteMapping("/{managerId}")
+    public void deleteManager(@PathVariable Long managerId) {
         managerService.removeManager(managerId);
     }
 

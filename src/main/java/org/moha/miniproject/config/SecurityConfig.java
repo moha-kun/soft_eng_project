@@ -1,6 +1,6 @@
 package org.moha.miniproject.config;
 
-import org.moha.miniproject.enteties.Role;
+import org.moha.miniproject.filters.JwtAuthenticationFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,6 +19,7 @@ public class SecurityConfig {
 
     @Autowired
     private JwtAuthenticationFilter jwtAuthFilter;
+
     @Autowired
     private AuthenticationProvider authenticationProvider;
 
@@ -27,15 +28,19 @@ public class SecurityConfig {
         http
                 .csrf().disable()
                 .authorizeHttpRequests()
-                .requestMatchers("/api/auth/**").permitAll()
-                .requestMatchers("/affectation/**").hasAnyRole("MANAGER", "ADMIN")
+                .requestMatchers("/auth/**")
+                .permitAll()
+                .requestMatchers("/affectation/**")
+                .hasAnyRole("MANAGER", "ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authenticationProvider(authenticationProvider)
-                .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
+                .addFilterBefore(
+                        jwtAuthFilter,
+                        UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
     }

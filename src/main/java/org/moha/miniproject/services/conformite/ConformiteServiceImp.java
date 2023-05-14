@@ -8,7 +8,6 @@ import org.moha.miniproject.services.correspondance.CorrespondanceService;
 import org.moha.miniproject.services.vehicule.VehiculeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
@@ -26,9 +25,9 @@ public class ConformiteServiceImp implements ConformiteService {
     public boolean isVehiculeConforme(Long idVehicule, char type) {
         Vehicule vehicule = vehiculeService.getVehicleById(idVehicule);
 
-//        if (vehicule.getCategorie() == type)
-//            return true;
-//        return false;
+        // if (vehicule.getCategorie() == type)
+        // return true;
+        // return false;
         return correspondanceService.correspondanceTypeVehicule(vehicule.getModel()) == type;
     }
 
@@ -36,7 +35,7 @@ public class ConformiteServiceImp implements ConformiteService {
     public boolean isConducteurConforme(Long idConducteur, char typePermis) {
         Conducteur conducteur = conducteurService.getDriverById(idConducteur);
 
-        if(conducteur != null) {
+        if (conducteur != null) {
             List<Permis> permisList = conducteur.getPermis();
 
             for (Permis permis : permisList) {

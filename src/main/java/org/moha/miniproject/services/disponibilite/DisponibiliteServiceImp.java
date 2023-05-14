@@ -6,7 +6,6 @@ import org.moha.miniproject.enteties.Conducteur;
 import org.moha.miniproject.enteties.Vehicule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.time.LocalDate;
 import java.util.List;
 
@@ -54,8 +53,7 @@ public class DisponibiliteServiceImp implements DisponibiliteService {
     public boolean isVehiculeDisponible(
             Long idVehicule,
             LocalDate dateDepart,
-            LocalDate dateArrive
-    ) {
+            LocalDate dateArrive) {
         return isVehiculeDisponible(idVehicule, dateDepart, dateArrive);
     }
 

@@ -10,7 +10,7 @@
         </encoder>
     </appender>
 
-    <!--App logs(level=TRACE)-->
+    <!--App logs(level=TRACE) appender-->
     <appender name="APP_TRACE_FILE" class="ch.qos.logback.core.FileAppender">
         <file>logs/app-general.log</file>
         <append>true</append>
@@ -22,7 +22,7 @@
         </encoder>
     </appender>
 
-    <!--App logs(level=ERROR)-->
+    <!--App logs(level=ERROR) appender-->
     <appender name="APP_ERROR_FILE" class="ch.qos.logback.core.FileAppender">
         <file>logs/app-errors.log</file>
         <append>true</append>
@@ -39,7 +39,7 @@
         </encoder>
     </appender>
 
-    <!--HTTP logs(level=TRACE)-->
+    <!--HTTP logs(level=TRACE) appender-->
     <appender name="HTTP_TRACE_FILE" class="ch.qos.logback.core.FileAppender">
         <file>logs/http-combined.log</file>
         <append>true</append>
@@ -56,7 +56,7 @@
         </encoder>
     </appender>
 
-    <!--HTTP logs(level=ERROR)-->
+    <!--HTTP logs(level=ERROR) appender-->
     <appender name="HTTP_ERROR_FILE" class="ch.qos.logback.core.FileAppender">
         <file>logs/http-errors.log</file>
         <append>true</append>

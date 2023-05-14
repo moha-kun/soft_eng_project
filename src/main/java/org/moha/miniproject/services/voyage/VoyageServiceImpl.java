@@ -8,11 +8,10 @@ import org.moha.miniproject.services.conformite.ConformiteService;
 import org.moha.miniproject.services.disponibilite.DisponibiliteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 
 @Service
-public class VoyageServiceImpl implements VoyageService{
+public class VoyageServiceImpl implements VoyageService {
 
     @Autowired
     private VoyageRepository voyageRepository;
@@ -24,19 +23,19 @@ public class VoyageServiceImpl implements VoyageService{
     private ConformiteService conformiteService;
 
     @Override
-    public List<Voyage> getVoyages(){
+    public List<Voyage> getVoyages() {
         return voyageRepository.findAll();
     }
 
     @Override
-    public Voyage createVoyage(Voyage voyage){
+    public Voyage createVoyage(Voyage voyage) {
         return voyageRepository.save(voyage);
     }
 
     @Override
     public Voyage getVoyageById(Long voyageId) {
         Voyage v = voyageRepository.findById(voyageId).orElse(null);
-        if(v == null){
+        if (v == null) {
             throw new RuntimeException("Voyage with id " + voyageId + " not found!");
         }
         return v;
@@ -46,12 +45,14 @@ public class VoyageServiceImpl implements VoyageService{
     public Voyage updateVoyage(Voyage voyage) {
 
         Voyage v = voyageRepository.findById(voyage.getIdVoyage()).orElse(null);
-        if(v == null) throw new RuntimeException("Voyage with id " + voyage.getIdVoyage() + " not found");
+        if (v == null)
+            throw new RuntimeException("Voyage with id " + voyage.getIdVoyage() + " not found");
 
         voyage.setConducteur(v.getConducteur());
         voyage.setVehicule(v.getVehicule());
 
-        //Check if Conducteur is available && conform for modified dates and vehicule types
+        // Check if Conducteur is available && conform for modified dates and vehicule
+        // types
         Conducteur c = v.getConducteur();
         Vehicule vehicule = v.getVehicule();
 
@@ -61,19 +62,22 @@ public class VoyageServiceImpl implements VoyageService{
         boolean isVehiculeDispo = true;
         boolean isVehiculeConform = true;
 
-        if(c != null){
-            isCondDispo = disponibiliteService.isConducteurDisponible(c.getId(), voyage.getDateDepart(), voyage.getDateArrivee(), voyage.getIdVoyage());
+        if (c != null) {
+            isCondDispo = disponibiliteService.isConducteurDisponible(c.getId(), voyage.getDateDepart(),
+                    voyage.getDateArrivee(), voyage.getIdVoyage());
             isCondConform = conformiteService.isConducteurConforme(c.getId(), voyage.getTypeVehicule());
         }
 
-        if(vehicule != null){
-            isVehiculeConform = conformiteService.isVehiculeConforme(vehicule.getIdVehicule(), voyage.getTypeVehicule());
-            isVehiculeDispo = disponibiliteService.isVehiculeDisponible(vehicule.getIdVehicule(), voyage.getDateDepart(), voyage.getDateArrivee(), voyage.getIdVoyage());
+        if (vehicule != null) {
+            isVehiculeConform = conformiteService.isVehiculeConforme(vehicule.getIdVehicule(),
+                    voyage.getTypeVehicule());
+            isVehiculeDispo = disponibiliteService.isVehiculeDisponible(vehicule.getIdVehicule(),
+                    voyage.getDateDepart(), voyage.getDateArrivee(), voyage.getIdVoyage());
         }
 
-        if( isCondConform && isCondDispo && isVehiculeConform && isVehiculeDispo){
+        if (isCondConform && isCondDispo && isVehiculeConform && isVehiculeDispo) {
             voyageRepository.save(voyage);
-        }else{
+        } else {
             throw new RuntimeException("Conducteur is not available or doesnt conform with new trip.");
         }
 
