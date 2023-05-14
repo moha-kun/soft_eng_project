@@ -6,9 +6,11 @@ import org.moha.miniproject.enteties.Manager;
 import org.moha.miniproject.enteties.Role;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class ManagerServiceImpl implements ManagerService {
 
     @Autowired
