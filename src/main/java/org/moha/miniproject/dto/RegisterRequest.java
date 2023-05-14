@@ -1,6 +1,5 @@
 package org.moha.miniproject.dto;
 
-
 import lombok.*;
 
 @Getter

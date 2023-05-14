@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-
 import java.time.LocalDate;
 import java.util.List;
 
@@ -47,6 +46,6 @@ public class Vehicule {
     @OneToMany(mappedBy = "vehicule")
     private List<VisiteTechnique> visiteTechniques;
 
-    @OneToMany( mappedBy = "vehicule")
+    @OneToMany(mappedBy = "vehicule")
     private List<Vignette> vignettes;
 }
