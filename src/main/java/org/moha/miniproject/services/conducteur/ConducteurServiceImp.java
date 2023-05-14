@@ -17,11 +17,9 @@ public class ConducteurServiceImp implements ConducteurService {
     @Autowired
     private ConducteurRepository conducteurRepository;
 
-<<<<<<< HEAD
     @Autowired
     private VoyageRepository voyageRepository;
-=======
->>>>>>> 112282f97c56b838a128d1c0fbf893d15161a89f
+
     @Autowired
     private PasswordEncoder passwordEncoder;
 
@@ -80,7 +78,7 @@ public class ConducteurServiceImp implements ConducteurService {
     @Override
     public void removeDriver(Long driverId) {
         List<Voyage> voyages = voyageRepository.findVoyagesByConducteur(driverId);
-        if(voyages.size() > 0)
+        if (voyages.size() > 0)
             voyages.forEach(voyage -> {
                 voyage.setConducteur(null);
                 voyageRepository.save(voyage);
