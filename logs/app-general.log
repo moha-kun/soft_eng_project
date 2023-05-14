@@ -2356,3 +2356,227 @@ java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a par
 08:20:09.685 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 08:20:09.688 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 08:20:09.694 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+08:42:07.853 [restartedMain] INFO  o.m.m.MiniProjectApplication - Starting MiniProjectApplication using Java 17.0.6 with PID 2824 (D:\ecole\genie logicielle\miniProject\target\classes started by naitm in D:\ecole\genie logicielle\miniProject)
+08:42:07.856 [restartedMain] DEBUG o.m.m.MiniProjectApplication - Running with Spring Boot v3.0.4, Spring v6.0.6
+08:42:07.858 [restartedMain] INFO  o.m.m.MiniProjectApplication - No active profile set, falling back to 1 default profile: "default"
+08:42:07.902 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+08:42:07.903 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+08:42:08.562 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08:42:08.660 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 90 ms. Found 10 JPA repository interfaces.
+08:42:09.285 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+08:42:09.294 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+08:42:09.295 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+08:42:09.295 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+08:42:09.359 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08:42:09.360 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1456 ms
+08:42:09.608 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+08:42:09.657 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+08:42:09.913 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+08:42:10.179 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@48557ed8
+08:42:10.181 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+08:42:10.203 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+08:42:10.205 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+08:42:11.397 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08:42:11.405 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+08:42:11.701 [restartedMain] DEBUG o.m.m.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+08:42:12.066 [restartedMain] WARN  o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'affectationController': Unsatisfied dependency expressed through field 'affectationService': Error creating bean with name 'affectationServiceImp': Unsatisfied dependency expressed through field 'conformiteService': Error creating bean with name 'conformiteServiceImp': Unsatisfied dependency expressed through field 'vehiculeService': Error creating bean with name 'vehiculeServiceImp': Unsatisfied dependency expressed through field 'voyageRepository': Error creating bean with name 'voyageRepository' defined in org.moha.miniproject.Repositories.VoyageRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List org.moha.miniproject.Repositories.VoyageRepository.findVoyagesByVehiculeId(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List org.moha.miniproject.Repositories.VoyageRepository.findVoyagesByVehiculeId(java.lang.Long); No property 'id' found for type 'Vehicule' Traversed path: Voyage.vehicule.
+08:42:12.067 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+08:42:12.069 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+08:42:12.081 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+08:42:12.083 [restartedMain] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+08:42:12.095 [restartedMain] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+08:42:12.113 [restartedMain] ERROR o.s.boot.SpringApplication - Application run failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'affectationController': Unsatisfied dependency expressed through field 'affectationService': Error creating bean with name 'affectationServiceImp': Unsatisfied dependency expressed through field 'conformiteService': Error creating bean with name 'conformiteServiceImp': Unsatisfied dependency expressed through field 'vehiculeService': Error creating bean with name 'vehiculeServiceImp': Unsatisfied dependency expressed through field 'voyageRepository': Error creating bean with name 'voyageRepository' defined in org.moha.miniproject.Repositories.VoyageRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List org.moha.miniproject.Repositories.VoyageRepository.findVoyagesByVehiculeId(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List org.moha.miniproject.Repositories.VoyageRepository.findVoyagesByVehiculeId(java.lang.Long); No property 'id' found for type 'Vehicule' Traversed path: Voyage.vehicule.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:712)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:692)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:133)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:481)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:961)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:917)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:584)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:732)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:434)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:310)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1304)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1293)
+	at org.moha.miniproject.MiniProjectApplication.main(MiniProjectApplication.java:10)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'affectationServiceImp': Unsatisfied dependency expressed through field 'conformiteService': Error creating bean with name 'conformiteServiceImp': Unsatisfied dependency expressed through field 'vehiculeService': Error creating bean with name 'vehiculeServiceImp': Unsatisfied dependency expressed through field 'voyageRepository': Error creating bean with name 'voyageRepository' defined in org.moha.miniproject.Repositories.VoyageRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List org.moha.miniproject.Repositories.VoyageRepository.findVoyagesByVehiculeId(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List org.moha.miniproject.Repositories.VoyageRepository.findVoyagesByVehiculeId(java.lang.Long); No property 'id' found for type 'Vehicule' Traversed path: Voyage.vehicule.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:712)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:692)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:133)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:481)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1405)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1325)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:709)
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'conformiteServiceImp': Unsatisfied dependency expressed through field 'vehiculeService': Error creating bean with name 'vehiculeServiceImp': Unsatisfied dependency expressed through field 'voyageRepository': Error creating bean with name 'voyageRepository' defined in org.moha.miniproject.Repositories.VoyageRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List org.moha.miniproject.Repositories.VoyageRepository.findVoyagesByVehiculeId(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List org.moha.miniproject.Repositories.VoyageRepository.findVoyagesByVehiculeId(java.lang.Long); No property 'id' found for type 'Vehicule' Traversed path: Voyage.vehicule.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:712)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:692)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:133)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:481)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1405)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1325)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:709)
+	... 39 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'vehiculeServiceImp': Unsatisfied dependency expressed through field 'voyageRepository': Error creating bean with name 'voyageRepository' defined in org.moha.miniproject.Repositories.VoyageRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List org.moha.miniproject.Repositories.VoyageRepository.findVoyagesByVehiculeId(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List org.moha.miniproject.Repositories.VoyageRepository.findVoyagesByVehiculeId(java.lang.Long); No property 'id' found for type 'Vehicule' Traversed path: Voyage.vehicule.
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:712)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:692)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:133)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:481)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1408)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:598)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1405)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1325)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:709)
+	... 53 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'voyageRepository' defined in org.moha.miniproject.Repositories.VoyageRepository defined in @EnableJpaRepositories declared on JpaRepositoriesRegistrar.EnableJpaRepositoriesConfiguration: Could not create query for public abstract java.util.List org.moha.miniproject.Repositories.VoyageRepository.findVoyagesByVehiculeId(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List org.moha.miniproject.Repositories.VoyageRepository.findVoyagesByVehiculeId(java.lang.Long); No property 'id' found for type 'Vehicule' Traversed path: Voyage.vehicule.
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1762)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:599)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:521)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:326)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:324)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:200)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:254)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1405)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1325)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:709)
+	... 67 common frames omitted
+Caused by: org.springframework.data.repository.query.QueryCreationException: Could not create query for public abstract java.util.List org.moha.miniproject.Repositories.VoyageRepository.findVoyagesByVehiculeId(java.lang.Long); Reason: Failed to create query for method public abstract java.util.List org.moha.miniproject.Repositories.VoyageRepository.findVoyagesByVehiculeId(java.lang.Long); No property 'id' found for type 'Vehicule' Traversed path: Voyage.vehicule.
+	at org.springframework.data.repository.query.QueryCreationException.create(QueryCreationException.java:101)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:115)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.mapMethodsToQuery(QueryExecutorMethodInterceptor.java:99)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lambda$new$0(QueryExecutorMethodInterceptor.java:88)
+	at java.base/java.util.Optional.map(Optional.java:260)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.<init>(QueryExecutorMethodInterceptor.java:88)
+	at org.springframework.data.repository.core.support.RepositoryFactorySupport.getRepository(RepositoryFactorySupport.java:357)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.lambda$afterPropertiesSet$5(RepositoryFactoryBeanSupport.java:279)
+	at org.springframework.data.util.Lazy.getNullable(Lazy.java:245)
+	at org.springframework.data.util.Lazy.get(Lazy.java:114)
+	at org.springframework.data.repository.core.support.RepositoryFactoryBeanSupport.afterPropertiesSet(RepositoryFactoryBeanSupport.java:285)
+	at org.springframework.data.jpa.repository.support.JpaRepositoryFactoryBean.afterPropertiesSet(JpaRepositoryFactoryBean.java:132)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1808)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1758)
+	... 77 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Failed to create query for method public abstract java.util.List org.moha.miniproject.Repositories.VoyageRepository.findVoyagesByVehiculeId(java.lang.Long); No property 'id' found for type 'Vehicule' Traversed path: Voyage.vehicule.
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:96)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:124)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$CreateIfNotFoundQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:258)
+	at org.springframework.data.jpa.repository.query.JpaQueryLookupStrategy$AbstractQueryLookupStrategy.resolveQuery(JpaQueryLookupStrategy.java:95)
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.lookupQuery(QueryExecutorMethodInterceptor.java:111)
+	... 89 common frames omitted
+Caused by: org.springframework.data.mapping.PropertyReferenceException: No property 'id' found for type 'Vehicule' Traversed path: Voyage.vehicule.
+	at org.springframework.data.mapping.PropertyPath.<init>(PropertyPath.java:90)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:423)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:399)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:433)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:456)
+	at org.springframework.data.mapping.PropertyPath.create(PropertyPath.java:399)
+	at org.springframework.data.mapping.PropertyPath.lambda$from$0(PropertyPath.java:352)
+	at java.base/java.util.concurrent.ConcurrentMap.computeIfAbsent(ConcurrentMap.java:330)
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:334)
+	at org.springframework.data.mapping.PropertyPath.from(PropertyPath.java:317)
+	at org.springframework.data.repository.query.parser.Part.<init>(Part.java:81)
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.lambda$new$0(PartTree.java:242)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.data.repository.query.parser.PartTree$OrPart.<init>(PartTree.java:243)
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.lambda$new$0(PartTree.java:372)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:992)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+	at org.springframework.data.repository.query.parser.PartTree$Predicate.<init>(PartTree.java:373)
+	at org.springframework.data.repository.query.parser.PartTree.<init>(PartTree.java:96)
+	at org.springframework.data.jpa.repository.query.PartTreeJpaQuery.<init>(PartTreeJpaQuery.java:89)
+	... 93 common frames omitted
+08:45:05.588 [restartedMain] INFO  o.m.m.MiniProjectApplication - Starting MiniProjectApplication using Java 17.0.6 with PID 17592 (D:\ecole\genie logicielle\miniProject\target\classes started by naitm in D:\ecole\genie logicielle\miniProject)
+08:45:05.590 [restartedMain] DEBUG o.m.m.MiniProjectApplication - Running with Spring Boot v3.0.4, Spring v6.0.6
+08:45:05.591 [restartedMain] INFO  o.m.m.MiniProjectApplication - No active profile set, falling back to 1 default profile: "default"
+08:45:05.634 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+08:45:05.634 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+08:45:06.303 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+08:45:06.409 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 98 ms. Found 10 JPA repository interfaces.
+08:45:07.033 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+08:45:07.041 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+08:45:07.042 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+08:45:07.042 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+08:45:07.097 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+08:45:07.097 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1462 ms
+08:45:07.344 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+08:45:07.391 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+08:45:07.675 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+08:45:07.952 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@77ce6702
+08:45:07.954 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+08:45:07.971 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+08:45:07.973 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+08:45:09.037 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+08:45:09.047 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+08:45:09.347 [restartedMain] DEBUG o.m.m.config.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+08:45:09.885 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+08:45:10.129 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@29d5c220, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@214d58db, org.springframework.security.web.context.SecurityContextHolderFilter@590d3aa0, org.springframework.security.web.header.HeaderWriterFilter@4093e24, org.springframework.security.web.authentication.logout.LogoutFilter@21b161aa, org.moha.miniproject.config.JwtAuthenticationFilter@405fa349, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2bad4fdf, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@77adfdda, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@463e574c, org.springframework.security.web.session.SessionManagementFilter@766f538d, org.springframework.security.web.access.ExceptionTranslationFilter@57b3dcd4, org.springframework.security.web.access.intercept.AuthorizationFilter@5feaff4e]
+08:45:10.406 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+08:45:10.429 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+08:45:10.447 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+08:45:10.456 [restartedMain] INFO  o.m.m.MiniProjectApplication - Started MiniProjectApplication in 5.222 seconds (process running for 6.075)
+08:48:58.794 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+08:48:58.794 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+08:48:58.796 [http-nio-8080-exec-1] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+08:48:58.910 [http-nio-8080-exec-1] TRACE org.zalando.logbook.Logbook - {"origin":"remote","type":"request","correlation":"baf5eff8960780d6","protocol":"HTTP/1.1","remote":"0:0:0:0:0:0:0:1","method":"POST","uri":"http://localhost:8080/api/auth/authenticate","host":"localhost","path":"/api/auth/authenticate","scheme":"http","port":"8080","headers":{"accept":["*/*"],"accept-encoding":["gzip, deflate, br"],"connection":["keep-alive"],"content-length":["61"],"content-type":["application/json"],"host":["localhost:8080"],"postman-token":["26a90319-6718-47ba-a9ac-21efcf5b39ef"],"user-agent":["PostmanRuntime/7.32.2"]},"body":{"email":"mana@ger.ma","password":"password"}}
+08:48:59.598 [http-nio-8080-exec-1] TRACE org.zalando.logbook.Logbook - {"origin":"local","type":"response","correlation":"baf5eff8960780d6","duration":739,"protocol":"HTTP/1.1","status":200,"headers":{"Cache-Control":["no-cache, no-store, max-age=0, must-revalidate"],"Connection":["keep-alive"],"Content-Type":["application/json"],"Date":["Sun, 14 May 2023 19:48:59 GMT"],"Expires":["0"],"Keep-Alive":["timeout=60"],"Pragma":["no-cache"],"Transfer-Encoding":["chunked"],"X-Content-Type-Options":["nosniff"],"X-Frame-Options":["DENY"],"X-XSS-Protection":["0"]},"body":{"token":"eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn1dLCJzdWIiOiJtYW5hQGdlci5tYSIsImlhdCI6MTY4NDA5MzczOSwiZXhwIjoxNjg0MTgwMTM5fQ.zE-cjprn3czw428I1AnDyIQD7_PqIDJ9xc4bQWqEqFw"}}
+08:49:14.791 [http-nio-8080-exec-2] TRACE org.zalando.logbook.Logbook - {"origin":"remote","type":"request","correlation":"9b3ccc2ef2fd0b7f","protocol":"HTTP/1.1","remote":"0:0:0:0:0:0:0:1","method":"DELETE","uri":"http://localhost:8080/voyages/7","host":"localhost","path":"/voyages/7","scheme":"http","port":"8080","headers":{"accept":["*/*"],"accept-encoding":["gzip, deflate, br"],"authorization":["XXX"],"connection":["keep-alive"],"content-length":["10"],"content-type":["application/json"],"host":["localhost:8080"],"postman-token":["2980ceb4-ece4-4537-bd8a-253683cf46cf"],"user-agent":["PostmanRuntime/7.32.2"]},"body":{}}
+08:49:14.869 [http-nio-8080-exec-2] TRACE org.zalando.logbook.Logbook - {"origin":"local","type":"response","correlation":"9b3ccc2ef2fd0b7f","duration":78,"protocol":"HTTP/1.1","status":200,"headers":{"Cache-Control":["no-cache, no-store, max-age=0, must-revalidate"],"Connection":["keep-alive"],"Date":["Sun, 14 May 2023 19:49:14 GMT"],"Expires":["0"],"Keep-Alive":["timeout=60"],"Pragma":["no-cache"],"Transfer-Encoding":["chunked"],"X-Content-Type-Options":["nosniff"],"X-Frame-Options":["DENY"],"X-XSS-Protection":["0"]}}
+08:50:06.216 [http-nio-8080-exec-4] TRACE org.zalando.logbook.Logbook - {"origin":"remote","type":"request","correlation":"cd48188fd261a783","protocol":"HTTP/1.1","remote":"0:0:0:0:0:0:0:1","method":"DELETE","uri":"http://localhost:8080/voyages/7","host":"localhost","path":"/voyages/7","scheme":"http","port":"8080","headers":{"accept":["*/*"],"accept-encoding":["gzip, deflate, br"],"authorization":["XXX"],"connection":["keep-alive"],"content-length":["10"],"content-type":["application/json"],"host":["localhost:8080"],"postman-token":["ff9c9124-f606-47ea-9481-3713d1eac1dc"],"user-agent":["PostmanRuntime/7.32.2"]},"body":{}}
+08:50:06.222 [http-nio-8080-exec-4] TRACE org.zalando.logbook.Logbook - {"origin":"local","type":"response","correlation":"cd48188fd261a783","duration":6,"protocol":"HTTP/1.1","status":200,"headers":{"Cache-Control":["no-cache, no-store, max-age=0, must-revalidate"],"Connection":["keep-alive"],"Date":["Sun, 14 May 2023 19:50:06 GMT"],"Expires":["0"],"Keep-Alive":["timeout=60"],"Pragma":["no-cache"],"Transfer-Encoding":["chunked"],"X-Content-Type-Options":["nosniff"],"X-Frame-Options":["DENY"],"X-XSS-Protection":["0"]}}
+08:50:20.266 [http-nio-8080-exec-5] TRACE org.zalando.logbook.Logbook - {"origin":"remote","type":"request","correlation":"e5d21a2e0778500e","protocol":"HTTP/1.1","remote":"0:0:0:0:0:0:0:1","method":"DELETE","uri":"http://localhost:8080/voyages/5","host":"localhost","path":"/voyages/5","scheme":"http","port":"8080","headers":{"accept":["*/*"],"accept-encoding":["gzip, deflate, br"],"authorization":["XXX"],"connection":["keep-alive"],"content-length":["10"],"content-type":["application/json"],"host":["localhost:8080"],"postman-token":["569ce340-87cb-465d-857d-1c2e91f4b4f3"],"user-agent":["PostmanRuntime/7.32.2"]},"body":{}}
+08:50:20.282 [http-nio-8080-exec-5] TRACE org.zalando.logbook.Logbook - {"origin":"local","type":"response","correlation":"e5d21a2e0778500e","duration":16,"protocol":"HTTP/1.1","status":200,"headers":{"Cache-Control":["no-cache, no-store, max-age=0, must-revalidate"],"Connection":["keep-alive"],"Date":["Sun, 14 May 2023 19:50:20 GMT"],"Expires":["0"],"Keep-Alive":["timeout=60"],"Pragma":["no-cache"],"Transfer-Encoding":["chunked"],"X-Content-Type-Options":["nosniff"],"X-Frame-Options":["DENY"],"X-XSS-Protection":["0"]}}
+08:50:29.223 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+08:50:29.225 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+08:50:29.232 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

@@ -35,18 +35,25 @@ public class Vehicule {
     private Character categorie;
 
     @OneToMany(mappedBy = "vehicule")
-    @JsonIgnore
     private List<Voyage> voyages;
 
-    @OneToMany(mappedBy = "vehicule")
+    @OneToMany(mappedBy = "vehicule",
+            cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<CarteGrise> carteGrises;
 
-    @OneToMany(mappedBy = "vehicule")
+    @OneToMany(mappedBy = "vehicule",
+            cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Assurance> assurances;
 
-    @OneToMany(mappedBy = "vehicule")
+    @OneToMany(mappedBy = "vehicule",
+            cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<VisiteTechnique> visiteTechniques;
 
-    @OneToMany( mappedBy = "vehicule")
+    @OneToMany( mappedBy = "vehicule",
+            cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Vignette> vignettes;
 }

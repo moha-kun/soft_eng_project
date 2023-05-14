@@ -27,9 +27,9 @@ public class Conducteur extends User {
 
     @OneToMany(mappedBy = "conducteur",
             cascade = CascadeType.ALL)
+    @JsonIgnore
     private List<Permis> permis;
 
     @OneToMany(mappedBy = "conducteur")
-    @JsonIgnore
     private List<Voyage> voyages;
 }

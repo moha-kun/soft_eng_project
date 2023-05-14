@@ -3,7 +3,9 @@ package org.moha.miniproject.services.vehicule;
 import java.util.List;
 
 import org.moha.miniproject.Repositories.VehiculeRepository;
+import org.moha.miniproject.Repositories.VoyageRepository;
 import org.moha.miniproject.enteties.Vehicule;
+import org.moha.miniproject.enteties.Voyage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +13,9 @@ import org.springframework.stereotype.Service;
 public class VehiculeServiceImp implements VehiculeService {
   @Autowired
   private VehiculeRepository vehiculeRepository;
+
+  @Autowired
+  private VoyageRepository voyageRepository;
 
   @Override
   public List<Vehicule> getAllVehicles() {
@@ -33,6 +38,12 @@ public class VehiculeServiceImp implements VehiculeService {
 
   @Override
   public void removeVehicle(Long vehicleId) {
+    List<Voyage> voyages = voyageRepository.findVoyagesByVehicule(vehicleId);
+    if (voyages.size() > 0)
+      voyages.forEach(voyage -> {
+        voyage.setVehicule(null);
+        voyageRepository.save(voyage);
+      });
     vehiculeRepository.deleteById(vehicleId);
   }
 }

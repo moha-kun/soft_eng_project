@@ -1,9 +1,11 @@
 package org.moha.miniproject.services.conducteur;
 
 import org.moha.miniproject.Repositories.ConducteurRepository;
+import org.moha.miniproject.Repositories.VoyageRepository;
 import org.moha.miniproject.dto.PasswordUpdateDTO;
 import org.moha.miniproject.enteties.Conducteur;
 import org.moha.miniproject.enteties.Role;
+import org.moha.miniproject.enteties.Voyage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,9 @@ public class ConducteurServiceImp implements ConducteurService {
 
     @Autowired
     private ConducteurRepository conducteurRepository;
+
+    @Autowired
+    private VoyageRepository voyageRepository;
     @Autowired
     private PasswordEncoder passwordEncoder;
 
@@ -71,6 +76,12 @@ public class ConducteurServiceImp implements ConducteurService {
 
     @Override
     public void removeDriver(Long driverId) {
+        List<Voyage> voyages = voyageRepository.findVoyagesByConducteur(driverId);
+        if(voyages.size() > 0)
+            voyages.forEach(voyage -> {
+                voyage.setConducteur(null);
+                voyageRepository.save(voyage);
+            });
         this.conducteurRepository.deleteById(driverId);
     }
 

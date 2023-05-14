@@ -85,6 +85,12 @@ public class VoyageServiceImpl implements VoyageService{
 
     @Override
     public void deleteVoyage(Long voyageId) {
-        voyageRepository.deleteById(voyageId);
+        Voyage voyage = voyageRepository.findById(voyageId).orElse(null);
+        if(voyage != null) {
+            voyage.setConducteur(null);
+            voyage.setVehicule(null);
+            voyageRepository.save(voyage);
+            voyageRepository.delete(voyage);
+        }
     }
 }
