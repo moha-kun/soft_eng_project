@@ -27,6 +27,7 @@ public class DisponibiliteServiceImp implements DisponibiliteService {
         return isConducteurDisponible(idConducteur, dateDepart, dateArrive, null);
     }
 
+    @Override
     public boolean isConducteurDisponible(
             Long idConducteur,
             LocalDate dateDepart,
@@ -49,14 +50,22 @@ public class DisponibiliteServiceImp implements DisponibiliteService {
 
         return false;
     }
-
+    @Override
+    public List<Conducteur> getAvailableConducteurs(LocalDate dateDepart, LocalDate dateArrive){
+        return conducteurRepository.getDisponibleConducteur(dateDepart, dateArrive);
+    }
+    @Override
+    public List<Vehicule> getAvailableVehicules(LocalDate dateDepart, LocalDate dateArrive){
+        return vehiculeRepository
+                .getDiponibleVehicule(dateDepart, dateArrive);
+    }
     @Override
     public boolean isVehiculeDisponible(
             Long idVehicule,
             LocalDate dateDepart,
             LocalDate dateArrive
     ) {
-        return isVehiculeDisponible(idVehicule, dateDepart, dateArrive);
+        return isVehiculeDisponible(idVehicule, dateDepart, dateArrive, null);
     }
 
     @Override
