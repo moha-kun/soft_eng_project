@@ -22,7 +22,7 @@ public class VehiculeController {
         return vehiculeService.getAllVehicles();
     }
 
-    @GetMapping("/conducteurs/disponible")
+    @GetMapping("/vehicules/disponible")
     public List<Vehicule> getDisponibleVehicules(
             @RequestParam(name = "dateDepart") LocalDate dateDepart,
             @RequestParam(name = "dateArrive")LocalDate dateArrive){
