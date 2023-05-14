@@ -56,9 +56,9 @@ public class ConducteurController {
         return conducteurService.updateDriverPassword(idCond, passwordUpdateDTO);
     }
 
-    @DeleteMapping("/{idCond}")
-    @PreAuthorize("@userVerification.checkUser(#idCond)")
-    public void deleteConducteur(@PathVariable Long idCond) {
+    @DeleteMapping("/conducteurs/{idCond}")
+    @PreAuthorize("@userVerification.checkUser(#idCond) or hasAnyRole('MANAGER')")
+    public void deleteConducteur(@PathVariable Long idCond){
         conducteurService.removeDriver(idCond);
     }
 }
