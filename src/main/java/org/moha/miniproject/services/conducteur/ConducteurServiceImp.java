@@ -17,11 +17,8 @@ public class ConducteurServiceImp implements ConducteurService {
     @Autowired
     private ConducteurRepository conducteurRepository;
 
-<<<<<<< HEAD
     @Autowired
     private VoyageRepository voyageRepository;
-=======
->>>>>>> 112282f97c56b838a128d1c0fbf893d15161a89f
     @Autowired
     private PasswordEncoder passwordEncoder;
 
@@ -86,10 +83,6 @@ public class ConducteurServiceImp implements ConducteurService {
                 voyageRepository.save(voyage);
             });
         this.conducteurRepository.deleteById(driverId);
-    }
-
-    private boolean checkUser(Long idConducteur) {
-        return true;
     }
 
 }
