@@ -18,11 +18,17 @@ public class AuthenticationController {
     private AuthenticationService authenticationService;
 
     @PostMapping("/authenticate")
-    public ResponseEntity<AuthenticationResponse> authenticate(
+    public ResponseEntity authenticate(
             @RequestBody AuthenticationRequest request) {
-        return ResponseEntity
-                .ok()
-                .body(authenticationService.authenticate(request));
+        try {
+            return ResponseEntity
+                    .ok()
+                    .body(authenticationService.authenticate(request));
+        } catch (Exception exception) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(exception.getMessage());
+        }
     }
 
 }

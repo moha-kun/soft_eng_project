@@ -4,6 +4,7 @@ import org.moha.miniproject.enteties.Vehicule;
 import org.moha.miniproject.services.disponibilite.DisponibiliteService;
 import org.moha.miniproject.services.vehicule.VehiculeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
@@ -25,30 +26,71 @@ public class VehiculeController {
     }
 
     @GetMapping("/disponible")
-    public List<Vehicule> getDisponibleVehicules(
+    public ResponseEntity getDisponibleVehicules(
             @RequestParam(name = "dateDepart") LocalDate dateDepart,
             @RequestParam(name = "dateArrive") LocalDate dateArrive) {
-        return disponibiliteService.getAvailableVehicules(dateDepart, dateArrive);
+        try {
+            return ResponseEntity
+                    .ok()
+                    .body(disponibiliteService.getAvailableVehicules(dateDepart, dateArrive));
+        } catch (Exception exception) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(exception.getMessage());
+        }
     }
 
     @GetMapping("/{vehiculeId}")
-    public Vehicule getVehiculeById(@PathVariable Long vehiculeId) {
-        return vehiculeService.getVehicleById(vehiculeId);
+    public ResponseEntity getVehiculeById(@PathVariable Long vehiculeId) {
+        try {
+            return ResponseEntity
+                    .ok()
+                    .body(vehiculeService.getVehicleById(vehiculeId));
+        } catch (Exception exception) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(exception.getMessage());
+        }
     }
 
     @PostMapping("")
-    public Vehicule createVehicule(@RequestBody Vehicule vehicule) {
-        return vehiculeService.saveVehicle(vehicule);
+    public ResponseEntity createVehicule(@RequestBody Vehicule vehicule) {
+        try {
+            return ResponseEntity
+                    .ok()
+                    .body(vehiculeService.saveVehicle(vehicule));
+        } catch (Exception exception) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(exception.getMessage());
+        }
     }
 
     @PutMapping("/{vehiculeId}")
-    public Vehicule updateVehicule(@PathVariable Long vehiculeId, @RequestBody Vehicule vehicule) {
-        vehicule.setIdVehicule(vehiculeId);
-        return vehiculeService.saveVehicle(vehicule);
+    public ResponseEntity updateVehicule(@PathVariable Long vehiculeId, @RequestBody Vehicule vehicule) {
+        try {
+            vehicule.setIdVehicule(vehiculeId);
+            return ResponseEntity
+                    .ok()
+                    .body(vehiculeService.saveVehicle(vehicule));
+        } catch (Exception exception) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(exception.getMessage());
+        }
     }
 
     @DeleteMapping("/{vehiculeId}")
-    public void deleteVehicule(@PathVariable Long vehiculeId) {
-        vehiculeService.removeVehicle(vehiculeId);
+    public ResponseEntity deleteVehicule(@PathVariable Long vehiculeId) {
+        try {
+            vehiculeService.removeVehicle(vehiculeId);
+            return ResponseEntity
+                    .ok()
+                    .build();
+        } catch (Exception exception) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(exception.getMessage());
+        }
     }
 }
