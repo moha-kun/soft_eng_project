@@ -1,6 +1,5 @@
 package org.moha.miniproject.enteties;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -38,21 +37,17 @@ public class Vehicule {
 
     @OneToMany(mappedBy = "vehicule",
             cascade = CascadeType.ALL)
-    @JsonIgnore
     private List<CarteGrise> carteGrises;
 
     @OneToMany(mappedBy = "vehicule",
             cascade = CascadeType.ALL)
-    @JsonIgnore
     private List<Assurance> assurances;
 
     @OneToMany(mappedBy = "vehicule",
             cascade = CascadeType.ALL)
-    @JsonIgnore
     private List<VisiteTechnique> visiteTechniques;
 
     @OneToMany( mappedBy = "vehicule",
             cascade = CascadeType.ALL)
-    @JsonIgnore
     private List<Vignette> vignettes;
 }

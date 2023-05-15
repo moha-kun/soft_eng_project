@@ -4,8 +4,10 @@ import org.moha.miniproject.Repositories.ConducteurRepository;
 import org.moha.miniproject.Repositories.VoyageRepository;
 import org.moha.miniproject.dto.PasswordUpdateDTO;
 import org.moha.miniproject.enteties.Conducteur;
+import org.moha.miniproject.enteties.Permis;
 import org.moha.miniproject.enteties.Role;
 import org.moha.miniproject.enteties.Voyage;
+import org.moha.miniproject.services.permis.PermisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -22,6 +24,9 @@ public class ConducteurServiceImp implements ConducteurService {
 
     @Autowired
     private PasswordEncoder passwordEncoder;
+
+    @Autowired
+    private PermisService permisService;
 
     @Override
     public List<Conducteur> getAllDrivers() {
@@ -46,6 +51,10 @@ public class ConducteurServiceImp implements ConducteurService {
         // Encrypt password
         conducteur.setPassword(passwordEncoder.encode(conducteur.getPassword()));
 
+        if(conducteur.getPermis() != null){
+            for (Permis p : conducteur.getPermis())
+                permisService.savePermis(p);
+        }
         // For security reasons we need to reset role
         conducteur.setRole(Role.ROLE_CONDUCTOR);
 
@@ -58,6 +67,10 @@ public class ConducteurServiceImp implements ConducteurService {
         // We don't want to input the password everytime we want to update
         conducteur.setPassword(oldCond.getPassword());
 
+        if(conducteur.getPermis() != null){
+            for (Permis p : conducteur.getPermis())
+                permisService.savePermis(p);
+        }
         return conducteurRepository.save(conducteur);
     }
 
