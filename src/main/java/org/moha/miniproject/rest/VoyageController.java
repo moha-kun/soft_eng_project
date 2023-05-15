@@ -36,7 +36,7 @@ public class VoyageController {
     @PutMapping("/{voyageId}")
     public Voyage updateVoyage(
             @PathVariable("voyageId") Long voyageId,
-            @RequestBody Voyage voyage) {
+            @RequestBody Voyage voyage) throws Exception {
         voyage.setIdVoyage(voyageId);
         return voyageService.updateVoyage(voyage);
     }
