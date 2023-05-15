@@ -19,6 +19,7 @@ public class ConducteurServiceImp implements ConducteurService {
 
     @Autowired
     private VoyageRepository voyageRepository;
+
     @Autowired
     private PasswordEncoder passwordEncoder;
 
