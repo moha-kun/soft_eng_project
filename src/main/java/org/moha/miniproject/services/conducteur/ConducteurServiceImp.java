@@ -76,7 +76,8 @@ public class ConducteurServiceImp implements ConducteurService {
 
     @Override
     public void removeDriver(Long driverId) {
-        List<Voyage> voyages = voyageRepository.findVoyagesByConducteur(driverId);
+        Conducteur conducteur = getDriverById(driverId);
+        List<Voyage> voyages = voyageRepository.findVoyagesByConducteur(conducteur);
         if(voyages.size() > 0)
             voyages.forEach(voyage -> {
                 voyage.setConducteur(null);

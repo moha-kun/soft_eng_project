@@ -36,12 +36,13 @@ public class VehiculeServiceImp implements VehiculeService {
 
   @Override
   public void removeVehicle(Long vehicleId) {
-    List<Voyage> voyages = voyageRepository.findVoyagesByVehicule(vehicleId);
-    if (voyages.size() > 0)
-      voyages.forEach(voyage -> {
-        voyage.setVehicule(null);
-        voyageRepository.save(voyage);
-      });
-    vehiculeRepository.deleteById(vehicleId);
+    Vehicule vehicule = getVehicleById(vehicleId);
+      List<Voyage> voyages = voyageRepository.findVoyagesByVehicule(vehicule);
+      if (voyages.size() > 0)
+        voyages.forEach(voyage -> {
+          voyage.setVehicule(null);
+          voyageRepository.save(voyage);
+        });
+      vehiculeRepository.deleteById(vehicleId);
   }
 }
