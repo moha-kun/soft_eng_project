@@ -66,6 +66,7 @@ public class ConducteurServiceImp implements ConducteurService {
         Conducteur oldCond = getDriverById(conducteur.getId());
         // We don't want to input the password everytime we want to update
         conducteur.setPassword(oldCond.getPassword());
+        conducteur.setRole(Role.ROLE_CONDUCTOR);
 
         if(conducteur.getPermis() != null){
             for (Permis p : conducteur.getPermis())

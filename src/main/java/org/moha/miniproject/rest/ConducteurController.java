@@ -43,7 +43,7 @@ public class ConducteurController {
     }
 
     @PutMapping("/{idCond}")
-    @PreAuthorize("@userVerification.checkUser(#idCond)")
+    @PreAuthorize("@userVerification.checkUser(#idCond) or hasAnyRole('MANAGER')")
     public Conducteur updateConducteur(@PathVariable Long idCond, @RequestBody Conducteur cond) {
         cond.setId(idCond);
         return conducteurService.updateDriver(cond);
