@@ -32,7 +32,7 @@ public class ConformiteServiceImp implements ConformiteService {
     }
 
     @Override
-    public boolean isConducteurConforme(Long idConducteur, char typePermis) {
+    public boolean isConducteurConforme(Long idConducteur, char typePermis) throws Exception {
         Conducteur conducteur = conducteurService.getDriverById(idConducteur);
 
         if (conducteur != null) {
