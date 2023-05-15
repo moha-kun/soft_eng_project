@@ -4,6 +4,7 @@ import org.moha.miniproject.dto.PasswordUpdateDTO;
 import org.moha.miniproject.enteties.Manager;
 import org.moha.miniproject.services.manager.ManagerService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -15,35 +16,84 @@ public class ManagerController {
     private ManagerService managerService;
 
     @GetMapping("")
-    public List<Manager> getManagers() {
-        return managerService.getAllManagers();
+    public ResponseEntity getManagers() {
+        try {
+            return ResponseEntity
+                    .ok()
+                    .body(managerService.getAllManagers());
+        } catch (Exception exception) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(exception.getMessage());
+        }
     }
 
     @PostMapping("")
-    public Manager createManager(@RequestBody Manager man) {
-        return managerService.saveManager(man);
+    public ResponseEntity createManager(@RequestBody Manager man) {
+        try {
+            return ResponseEntity
+                    .ok()
+                    .body(managerService.saveManager(man));
+        } catch (Exception exception) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(exception.getMessage());
+        }
     }
 
     @GetMapping("/{managerId}")
-    public Manager getManager(@PathVariable Long managerId) {
-        return managerService.getManagerById(managerId);
+    public ResponseEntity getManager(@PathVariable Long managerId) {
+        try {
+            return ResponseEntity
+                    .ok()
+                    .body(managerService.getManagerById(managerId));
+        } catch (Exception exception) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(exception.getMessage());
+        }
     }
 
     @PutMapping("/{managerId}")
-    public Manager updateManager(@PathVariable Long managerId, @RequestBody Manager man) {
-        man.setId(managerId);
-        return managerService.updateManager(man);
+    public ResponseEntity updateManager(@PathVariable Long managerId, @RequestBody Manager man) {
+        try {
+            man.setId(managerId);
+            return ResponseEntity
+                    .ok()
+                    .body(managerService.updateManager(man));
+        } catch (Exception exception) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(exception.getMessage());
+        }
     }
 
     @PutMapping("/{managerId}/password")
-    public Manager updateManagerPassword(@PathVariable Long managerId,
+    public ResponseEntity updateManagerPassword(@PathVariable Long managerId,
             @RequestBody PasswordUpdateDTO passwordUpdateDTO) {
-        return managerService.updateManagerPassword(managerId, passwordUpdateDTO);
+        try {
+            return ResponseEntity
+                    .ok()
+                    .body(managerService.updateManagerPassword(managerId, passwordUpdateDTO));
+        } catch (Exception exception) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(exception.getMessage());
+        }
     }
 
     @DeleteMapping("/{managerId}")
-    public void deleteManager(@PathVariable Long managerId) {
-        managerService.removeManager(managerId);
+    public ResponseEntity deleteManager(@PathVariable Long managerId) {
+        try {
+            managerService.removeManager(managerId);
+            return ResponseEntity
+                    .ok()
+                    .build();
+        } catch (Exception exception) {
+            return ResponseEntity
+                    .badRequest()
+                    .body(exception.getMessage());
+        }
     }
 
 }
