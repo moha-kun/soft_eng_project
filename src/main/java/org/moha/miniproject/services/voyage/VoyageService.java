@@ -10,7 +10,7 @@ public interface VoyageService {
 
     public Voyage getVoyageById(Long voyageId);
 
-    public Voyage updateVoyage(Voyage voyage);
+    public Voyage updateVoyage(Voyage voyage) throws Exception;
 
     public void deleteVoyage(Long voyageId);
 

@@ -46,7 +46,7 @@ public class VoyageServiceImpl implements VoyageService {
     }
 
     @Override
-    public Voyage updateVoyage(Voyage voyage) {
+    public Voyage updateVoyage(Voyage voyage) throws Exception {
 
         Voyage v = voyageRepository.findById(voyage.getIdVoyage()).orElse(null);
         if (v == null)

@@ -38,13 +38,13 @@ public class ConducteurController {
     }
 
     @GetMapping("/{idCond}")
-    public Conducteur getConducteur(@PathVariable Long idCond) {
+    public Conducteur getConducteur(@PathVariable Long idCond) throws Exception {
         return conducteurService.getDriverById(idCond);
     }
 
     @PutMapping("/{idCond}")
     @PreAuthorize("@userVerification.checkUser(#idCond) or hasAnyRole('MANAGER')")
-    public Conducteur updateConducteur(@PathVariable Long idCond, @RequestBody Conducteur cond) {
+    public Conducteur updateConducteur(@PathVariable Long idCond, @RequestBody Conducteur cond) throws Exception {
         cond.setId(idCond);
         return conducteurService.updateDriver(cond);
     }
@@ -52,13 +52,13 @@ public class ConducteurController {
     @PutMapping("/{idCond}/password")
     @PreAuthorize("@userVerification.checkUser(#idCond)")
     public Conducteur updateConducteurPassword(@PathVariable Long idCond,
-            @RequestBody PasswordUpdateDTO passwordUpdateDTO) {
+            @RequestBody PasswordUpdateDTO passwordUpdateDTO) throws Exception {
         return conducteurService.updateDriverPassword(idCond, passwordUpdateDTO);
     }
 
     @DeleteMapping("/{idCond}")
     @PreAuthorize("@userVerification.checkUser(#idCond) or hasAnyRole('MANAGER')")
-    public void deleteConducteur(@PathVariable Long idCond) {
+    public void deleteConducteur(@PathVariable Long idCond) throws Exception {
         conducteurService.removeDriver(idCond);
     }
 }

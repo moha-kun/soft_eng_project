@@ -7,13 +7,13 @@ import org.moha.miniproject.enteties.Conducteur;
 public interface ConducteurService {
   List<Conducteur> getAllDrivers();
 
-  Conducteur getDriverById(Long driverId);
+  Conducteur getDriverById(Long driverId) throws Exception;
 
   Conducteur saveDriver(Conducteur conducteur);
 
-  Conducteur updateDriver(Conducteur conducteur);
+  Conducteur updateDriver(Conducteur conducteur) throws Exception;
 
-  Conducteur updateDriverPassword(Long driverId, PasswordUpdateDTO passwordUpdateDTO);
+  Conducteur updateDriverPassword(Long driverId, PasswordUpdateDTO passwordUpdateDTO) throws Exception;
 
-  void removeDriver(Long driverId);
+  void removeDriver(Long driverId) throws Exception;
 }
