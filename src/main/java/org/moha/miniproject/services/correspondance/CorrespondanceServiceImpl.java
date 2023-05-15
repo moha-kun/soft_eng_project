@@ -8,6 +8,7 @@ import java.util.Map;
 public class CorrespondanceServiceImpl implements CorrespondanceService {
 
     // This shouldn't be hardcoded 🤫
+
     private Map<String, Character> vehiculeToPermisMap;
 
     public CorrespondanceServiceImpl() {
@@ -35,5 +36,13 @@ public class CorrespondanceServiceImpl implements CorrespondanceService {
         if (permis == null)
             throw new IllegalArgumentException("Wrong vehicule type: " + typeVehicule);
         return permis;
+    }
+    @Override
+    public boolean isVehiculeType(String vtype){
+        return vehiculeToPermisMap.containsKey(vtype);
+    }
+
+    public String getVehiculeTypes(){
+        return vehiculeToPermisMap.keySet().toString();
     }
 }

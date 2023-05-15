@@ -1,5 +1,6 @@
 package org.moha.miniproject.enteties;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -33,6 +34,7 @@ public class Vehicule {
     private Character categorie;
 
     @OneToMany(mappedBy = "vehicule")
+    @JsonIgnore
     private List<Voyage> voyages;
 
     @OneToMany(mappedBy = "vehicule",
