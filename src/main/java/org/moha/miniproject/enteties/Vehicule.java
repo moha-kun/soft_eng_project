@@ -30,9 +30,6 @@ public class Vehicule {
     @Column(name = "date_mise_route")
     private LocalDate dateMiseRoute;
 
-    @Column(name = "categorie")
-    private Character categorie;
-
     @OneToMany(mappedBy = "vehicule")
     @JsonIgnore
     private List<Voyage> voyages;
