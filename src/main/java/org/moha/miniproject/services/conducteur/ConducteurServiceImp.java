@@ -74,9 +74,12 @@ public class ConducteurServiceImp implements ConducteurService {
         conducteur.setEmail(oldCond.getEmail()); //Cannot update email
         conducteur.setRole(Role.ROLE_CONDUCTOR);
 
+        conducteurRepository.save(conducteur);
         if(conducteur.getPermis() != null){
-            for (Permis p : conducteur.getPermis())
+            for (Permis p : conducteur.getPermis()){
+                p.setConducteur(conducteur);
                 permisService.savePermis(p);
+            }
         }
         return conducteurRepository.save(conducteur);
     }
