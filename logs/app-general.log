@@ -5805,3 +5805,67 @@ java.lang.RuntimeException: Conducteur is not available or doesnt conform with n
 15-05-2023 09:27:04.903 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 15-05-2023 09:27:04.907 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 15-05-2023 09:27:04.915 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16-05-2023 09:37:19.405 [restartedMain] INFO  o.m.m.MiniProjectApplication - Starting MiniProjectApplication using Java 17.0.6 with PID 11632 (D:\ecole\genie logicielle\miniProject\target\classes started by naitm in D:\ecole\genie logicielle\miniProject)
+16-05-2023 09:37:19.409 [restartedMain] DEBUG o.m.m.MiniProjectApplication - Running with Spring Boot v3.0.4, Spring v6.0.6
+16-05-2023 09:37:19.410 [restartedMain] INFO  o.m.m.MiniProjectApplication - No active profile set, falling back to 1 default profile: "default"
+16-05-2023 09:37:19.487 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16-05-2023 09:37:19.488 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16-05-2023 09:37:20.729 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16-05-2023 09:37:20.969 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 220 ms. Found 10 JPA repository interfaces.
+16-05-2023 09:37:22.316 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16-05-2023 09:37:22.338 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16-05-2023 09:37:22.340 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16-05-2023 09:37:22.341 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+16-05-2023 09:37:22.496 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16-05-2023 09:37:22.497 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3007 ms
+16-05-2023 09:37:23.011 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16-05-2023 09:37:23.177 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+16-05-2023 09:37:24.001 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16-05-2023 09:37:24.882 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5b94e04d
+16-05-2023 09:37:24.885 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16-05-2023 09:37:24.919 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+16-05-2023 09:37:24.925 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+16-05-2023 09:37:27.879 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16-05-2023 09:37:27.913 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16-05-2023 09:37:28.658 [restartedMain] DEBUG o.m.m.f.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+16-05-2023 09:37:29.674 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16-05-2023 09:37:30.198 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@6b0a5c4f, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@186f57f3, org.springframework.security.web.context.SecurityContextHolderFilter@eab3f2e, org.springframework.security.web.header.HeaderWriterFilter@6d43de1c, org.springframework.security.web.authentication.logout.LogoutFilter@604a0f1b, org.moha.miniproject.filters.JwtAuthenticationFilter@f9c9b04, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1eb2ea47, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@58eccd76, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ac803d0, org.springframework.security.web.session.SessionManagementFilter@6973cac9, org.springframework.security.web.access.ExceptionTranslationFilter@7b410a0b, org.springframework.security.web.access.intercept.AuthorizationFilter@7450e8dd]
+16-05-2023 09:37:30.634 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16-05-2023 09:37:30.665 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16-05-2023 09:37:30.689 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16-05-2023 09:37:30.701 [restartedMain] INFO  o.m.m.MiniProjectApplication - Started MiniProjectApplication in 11.974 seconds (process running for 13.54)
+16-05-2023 09:37:36.752 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16-05-2023 09:37:36.763 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16-05-2023 09:37:36.782 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16-05-2023 09:53:36.196 [restartedMain] INFO  o.m.m.MiniProjectApplication - Starting MiniProjectApplication using Java 17.0.6 with PID 9644 (D:\ecole\genie logicielle\miniProject\target\classes started by naitm in D:\ecole\genie logicielle\miniProject)
+16-05-2023 09:53:36.206 [restartedMain] DEBUG o.m.m.MiniProjectApplication - Running with Spring Boot v3.0.4, Spring v6.0.6
+16-05-2023 09:53:36.209 [restartedMain] INFO  o.m.m.MiniProjectApplication - No active profile set, falling back to 1 default profile: "default"
+16-05-2023 09:53:36.371 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16-05-2023 09:53:36.373 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16-05-2023 09:53:37.577 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16-05-2023 09:53:37.802 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 205 ms. Found 10 JPA repository interfaces.
+16-05-2023 09:53:38.948 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16-05-2023 09:53:38.959 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16-05-2023 09:53:38.960 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16-05-2023 09:53:38.961 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+16-05-2023 09:53:39.046 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16-05-2023 09:53:39.047 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2671 ms
+16-05-2023 09:53:39.427 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16-05-2023 09:53:39.545 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+16-05-2023 09:53:39.953 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16-05-2023 09:53:40.467 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@71389dde
+16-05-2023 09:53:40.472 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16-05-2023 09:53:40.512 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+16-05-2023 09:53:40.517 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+16-05-2023 09:53:42.281 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16-05-2023 09:53:42.306 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16-05-2023 09:53:42.895 [restartedMain] DEBUG o.m.m.f.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+16-05-2023 09:53:43.870 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16-05-2023 09:53:44.248 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@62d330bf, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@176af017, org.springframework.security.web.context.SecurityContextHolderFilter@59340c28, org.springframework.security.web.header.HeaderWriterFilter@6d08362d, org.springframework.security.web.authentication.logout.LogoutFilter@1f4dde9b, org.moha.miniproject.filters.JwtAuthenticationFilter@5dcac378, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@61b5453a, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@18489b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4494c949, org.springframework.security.web.session.SessionManagementFilter@639623e6, org.springframework.security.web.access.ExceptionTranslationFilter@4b95c6c1, org.springframework.security.web.access.intercept.AuthorizationFilter@94f8062]
+16-05-2023 09:53:44.715 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16-05-2023 09:53:44.742 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16-05-2023 09:53:44.764 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16-05-2023 09:53:44.776 [restartedMain] INFO  o.m.m.MiniProjectApplication - Started MiniProjectApplication in 9.558 seconds (process running for 11.023)
+16-05-2023 09:53:55.789 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16-05-2023 09:53:55.794 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16-05-2023 09:53:55.806 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.

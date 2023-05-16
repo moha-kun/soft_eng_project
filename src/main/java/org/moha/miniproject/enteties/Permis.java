@@ -26,9 +26,6 @@ public class Permis {
     @Column(name = "type")
     private Character type;
 
-    @Column(name = "image_scannee")
-    private String imageScannee;
-
     @ManyToOne // (fetch = FetchType.LAZY)
     @JoinColumn(name = "id_conducteur")
     @JsonIgnore
