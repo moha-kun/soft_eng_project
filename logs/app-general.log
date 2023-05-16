@@ -5805,3 +5805,387 @@ java.lang.RuntimeException: Conducteur is not available or doesnt conform with n
 15-05-2023 09:27:04.903 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
 15-05-2023 09:27:04.907 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
 15-05-2023 09:27:04.915 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16-05-2023 10:06:03.128 [restartedMain] INFO  o.m.m.MiniProjectApplication - Starting MiniProjectApplication using Java 17.0.6 with PID 10180 (D:\ecole\genie logicielle\miniProject\target\classes started by naitm in D:\ecole\genie logicielle\miniProject)
+16-05-2023 10:06:03.135 [restartedMain] DEBUG o.m.m.MiniProjectApplication - Running with Spring Boot v3.0.4, Spring v6.0.6
+16-05-2023 10:06:03.136 [restartedMain] INFO  o.m.m.MiniProjectApplication - No active profile set, falling back to 1 default profile: "default"
+16-05-2023 10:06:03.371 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16-05-2023 10:06:03.373 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16-05-2023 10:06:04.679 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16-05-2023 10:06:04.911 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 218 ms. Found 10 JPA repository interfaces.
+16-05-2023 10:06:05.998 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16-05-2023 10:06:06.017 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16-05-2023 10:06:06.018 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16-05-2023 10:06:06.019 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+16-05-2023 10:06:06.172 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16-05-2023 10:06:06.176 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2798 ms
+16-05-2023 10:06:06.750 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16-05-2023 10:06:06.899 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+16-05-2023 10:06:07.697 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16-05-2023 10:06:08.863 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@743d9ec7
+16-05-2023 10:06:08.875 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16-05-2023 10:06:08.969 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+16-05-2023 10:06:08.978 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+16-05-2023 10:06:12.030 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16-05-2023 10:06:12.054 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16-05-2023 10:06:13.055 [restartedMain] DEBUG o.m.m.f.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+16-05-2023 10:06:14.288 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16-05-2023 10:06:14.843 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@26b3bf8, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7f3d059, org.springframework.security.web.context.SecurityContextHolderFilter@65e085b5, org.springframework.security.web.header.HeaderWriterFilter@28a3b477, org.springframework.security.web.authentication.logout.LogoutFilter@7be65499, org.moha.miniproject.filters.JwtAuthenticationFilter@58ac0651, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3929490e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3594cabd, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@3a3b9ef6, org.springframework.security.web.session.SessionManagementFilter@28582b06, org.springframework.security.web.access.ExceptionTranslationFilter@1ac7524b, org.springframework.security.web.access.intercept.AuthorizationFilter@6c2d261a]
+16-05-2023 10:06:15.200 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16-05-2023 10:06:15.245 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16-05-2023 10:06:15.275 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16-05-2023 10:06:15.293 [restartedMain] INFO  o.m.m.MiniProjectApplication - Started MiniProjectApplication in 12.917 seconds (process running for 15.03)
+16-05-2023 10:08:05.126 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16-05-2023 10:08:05.134 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16-05-2023 10:08:05.151 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16-05-2023 10:08:14.871 [restartedMain] INFO  o.m.m.MiniProjectApplication - Starting MiniProjectApplication using Java 17.0.6 with PID 3116 (D:\ecole\genie logicielle\miniProject\target\classes started by naitm in D:\ecole\genie logicielle\miniProject)
+16-05-2023 10:08:14.875 [restartedMain] DEBUG o.m.m.MiniProjectApplication - Running with Spring Boot v3.0.4, Spring v6.0.6
+16-05-2023 10:08:14.877 [restartedMain] INFO  o.m.m.MiniProjectApplication - No active profile set, falling back to 1 default profile: "default"
+16-05-2023 10:08:14.957 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16-05-2023 10:08:14.958 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16-05-2023 10:08:16.278 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16-05-2023 10:08:16.419 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 131 ms. Found 10 JPA repository interfaces.
+16-05-2023 10:08:17.455 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16-05-2023 10:08:17.470 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16-05-2023 10:08:17.472 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16-05-2023 10:08:17.473 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+16-05-2023 10:08:17.628 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16-05-2023 10:08:17.629 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2670 ms
+16-05-2023 10:08:18.279 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16-05-2023 10:08:18.448 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+16-05-2023 10:08:18.899 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16-05-2023 10:08:19.516 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@b7fa7f5
+16-05-2023 10:08:19.522 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16-05-2023 10:08:19.577 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+16-05-2023 10:08:19.584 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+16-05-2023 10:08:22.057 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16-05-2023 10:08:22.084 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16-05-2023 10:08:22.779 [restartedMain] DEBUG o.m.m.f.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+16-05-2023 10:08:23.851 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16-05-2023 10:08:24.310 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@bef8dfb, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@61b5453a, org.springframework.security.web.context.SecurityContextHolderFilter@5a928755, org.springframework.security.web.header.HeaderWriterFilter@3d23ffd7, org.springframework.security.web.authentication.logout.LogoutFilter@6586adc0, org.moha.miniproject.filters.JwtAuthenticationFilter@5d5c29d3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@32c65aef, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@421eb1d4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@18489b, org.springframework.security.web.session.SessionManagementFilter@4f6d15be, org.springframework.security.web.access.ExceptionTranslationFilter@ad9ae9, org.springframework.security.web.access.intercept.AuthorizationFilter@383a4155]
+16-05-2023 10:08:24.688 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16-05-2023 10:08:24.759 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16-05-2023 10:08:24.778 [restartedMain] INFO  o.m.m.MiniProjectApplication - Started MiniProjectApplication in 10.427 seconds (process running for 11.738)
+16-05-2023 10:08:24.831 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16-05-2023 10:08:24.837 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16-05-2023 10:08:24.852 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+16-05-2023 10:08:34.730 [restartedMain] INFO  o.m.m.MiniProjectApplication - Starting MiniProjectApplication using Java 17.0.6 with PID 1664 (D:\ecole\genie logicielle\miniProject\target\classes started by naitm in D:\ecole\genie logicielle\miniProject)
+16-05-2023 10:08:34.735 [restartedMain] DEBUG o.m.m.MiniProjectApplication - Running with Spring Boot v3.0.4, Spring v6.0.6
+16-05-2023 10:08:34.736 [restartedMain] INFO  o.m.m.MiniProjectApplication - No active profile set, falling back to 1 default profile: "default"
+16-05-2023 10:08:34.811 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+16-05-2023 10:08:34.811 [restartedMain] INFO  o.s.b.d.e.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+16-05-2023 10:08:35.892 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+16-05-2023 10:08:36.030 [restartedMain] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 129 ms. Found 10 JPA repository interfaces.
+16-05-2023 10:08:37.278 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+16-05-2023 10:08:37.288 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+16-05-2023 10:08:37.289 [restartedMain] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+16-05-2023 10:08:37.290 [restartedMain] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.5]
+16-05-2023 10:08:37.371 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+16-05-2023 10:08:37.372 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2560 ms
+16-05-2023 10:08:37.754 [restartedMain] INFO  o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+16-05-2023 10:08:37.894 [restartedMain] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 6.1.7.Final
+16-05-2023 10:08:38.331 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+16-05-2023 10:08:38.859 [restartedMain] INFO  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@33e1f422
+16-05-2023 10:08:38.863 [restartedMain] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+16-05-2023 10:08:38.887 [restartedMain] INFO  SQL dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+16-05-2023 10:08:38.888 [restartedMain] WARN  org.hibernate.orm.deprecation - HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+16-05-2023 10:08:40.517 [restartedMain] INFO  o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+16-05-2023 10:08:40.542 [restartedMain] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+16-05-2023 10:08:41.155 [restartedMain] DEBUG o.m.m.f.JwtAuthenticationFilter - Filter 'jwtAuthenticationFilter' configured for use
+16-05-2023 10:08:42.099 [restartedMain] WARN  o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+16-05-2023 10:08:42.655 [restartedMain] INFO  o.s.s.web.DefaultSecurityFilterChain - Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@c258ac0, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2928c314, org.springframework.security.web.context.SecurityContextHolderFilter@74f9e100, org.springframework.security.web.header.HeaderWriterFilter@321a2319, org.springframework.security.web.authentication.logout.LogoutFilter@49383032, org.moha.miniproject.filters.JwtAuthenticationFilter@3b051391, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7257350b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@101b7882, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@413de8bd, org.springframework.security.web.session.SessionManagementFilter@549e3899, org.springframework.security.web.access.ExceptionTranslationFilter@23e47a5b, org.springframework.security.web.access.intercept.AuthorizationFilter@6ea97020]
+16-05-2023 10:08:43.159 [restartedMain] INFO  o.s.b.d.a.OptionalLiveReloadServer - LiveReload server is running on port 35729
+16-05-2023 10:08:43.183 [restartedMain] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+16-05-2023 10:08:43.206 [restartedMain] INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path ''
+16-05-2023 10:08:43.217 [restartedMain] INFO  o.m.m.MiniProjectApplication - Started MiniProjectApplication in 9.019 seconds (process running for 10.432)
+16-05-2023 10:09:37.851 [http-nio-8080-exec-2] INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+16-05-2023 10:09:37.852 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+16-05-2023 10:09:37.856 [http-nio-8080-exec-2] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+16-05-2023 10:09:38.185 [http-nio-8080-exec-2] TRACE org.zalando.logbook.Logbook - {"origin":"remote","type":"request","correlation":"c6d208c843d6ed90","protocol":"HTTP/1.1","remote":"0:0:0:0:0:0:0:1","method":"POST","uri":"http://localhost:8080/auth/authenticate","host":"localhost","path":"/auth/authenticate","scheme":"http","port":"8080","headers":{"accept":["*/*"],"accept-encoding":["gzip, deflate, br"],"connection":["keep-alive"],"content-length":["60"],"content-type":["application/json"],"host":["localhost:8080"],"postman-token":["6110edfe-8e8c-4b31-b767-ddd3f9c9e105"],"user-agent":["PostmanRuntime/7.32.2"]},"body":{"email":"man@ger.ma","password":"password"}}
+16-05-2023 10:09:40.292 [http-nio-8080-exec-2] TRACE org.zalando.logbook.Logbook - {"origin":"local","type":"response","correlation":"c6d208c843d6ed90","duration":2277,"protocol":"HTTP/1.1","status":200,"headers":{"Cache-Control":["no-cache, no-store, max-age=0, must-revalidate"],"Connection":["keep-alive"],"Content-Type":["application/json"],"Date":["Tue, 16 May 2023 09:09:40 GMT"],"Expires":["0"],"Keep-Alive":["timeout=60"],"Pragma":["no-cache"],"Transfer-Encoding":["chunked"],"X-Content-Type-Options":["nosniff"],"X-Frame-Options":["DENY"],"X-XSS-Protection":["0"]},"body":{"token":"eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn1dLCJzdWIiOiJtYW5AZ2VyLm1hIiwiaWF0IjoxNjg0MjI4MTgwLCJleHAiOjE2ODQzMTQ1ODB9.SFpCNCY-nbHkqh3jK0dPHX6R2kR2sCVNHFuuhviqB1c"}}
+16-05-2023 10:11:12.653 [http-nio-8080-exec-5] TRACE org.zalando.logbook.Logbook - {"origin":"remote","type":"request","correlation":"d80b483c051882e0","protocol":"HTTP/1.1","remote":"0:0:0:0:0:0:0:1","method":"POST","uri":"http://localhost:8080/voyages/1","host":"localhost","path":"/voyages/1","scheme":"http","port":"8080","headers":{"accept":["*/*"],"accept-encoding":["gzip, deflate, br"],"authorization":["XXX"],"connection":["keep-alive"],"content-length":["192"],"content-type":["application/json"],"host":["localhost:8080"],"postman-token":["ac187f4b-20a5-4731-b201-c5a66763ac74"],"user-agent":["PostmanRuntime/7.32.2"]},"body":{"pointDepart":"Agadir","pointArrivee":"Dakhla","dateDepart":"2023-05-14","dateArrivee":"2023-05-20","typeVehicule":"Fourgonnette"}}
+16-05-2023 10:11:12.663 [http-nio-8080-exec-5] WARN  o.s.w.s.m.s.DefaultHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+16-05-2023 10:11:12.667 [http-nio-8080-exec-5] TRACE org.zalando.logbook.Logbook - {"origin":"local","type":"response","correlation":"d80b483c051882e0","duration":15,"protocol":"HTTP/1.1","status":405,"headers":{"Allow":["PUT, GET, DELETE"],"Cache-Control":["no-cache, no-store, max-age=0, must-revalidate"],"Expires":["0"],"Pragma":["no-cache"],"X-Content-Type-Options":["nosniff"],"X-Frame-Options":["DENY"],"X-XSS-Protection":["0"]}}
+16-05-2023 10:11:40.580 [http-nio-8080-exec-8] TRACE org.zalando.logbook.Logbook - {"origin":"remote","type":"request","correlation":"d87f0aeb878cc00f","protocol":"HTTP/1.1","remote":"0:0:0:0:0:0:0:1","method":"POST","uri":"http://localhost:8080/voyages","host":"localhost","path":"/voyages","scheme":"http","port":"8080","headers":{"accept":["*/*"],"accept-encoding":["gzip, deflate, br"],"authorization":["XXX"],"connection":["keep-alive"],"content-length":["192"],"content-type":["application/json"],"host":["localhost:8080"],"postman-token":["af807554-6286-42e9-95aa-8860846a6f7a"],"user-agent":["PostmanRuntime/7.32.2"]},"body":{"pointDepart":"Agadir","pointArrivee":"Dakhla","dateDepart":"2023-05-14","dateArrivee":"2023-05-20","typeVehicule":"Fourgonnette"}}
+16-05-2023 10:11:40.763 [http-nio-8080-exec-8] TRACE org.zalando.logbook.Logbook - {"origin":"local","type":"response","correlation":"d87f0aeb878cc00f","duration":182,"protocol":"HTTP/1.1","status":200,"headers":{"Cache-Control":["no-cache, no-store, max-age=0, must-revalidate"],"Connection":["keep-alive"],"Content-Type":["application/json"],"Date":["Tue, 16 May 2023 09:11:40 GMT"],"Expires":["0"],"Keep-Alive":["timeout=60"],"Pragma":["no-cache"],"Transfer-Encoding":["chunked"],"X-Content-Type-Options":["nosniff"],"X-Frame-Options":["DENY"],"X-XSS-Protection":["0"]},"body":{"idVoyage":3,"pointDepart":"Agadir","pointArrivee":"Dakhla","dateDepart":"2023-05-14","dateArrivee":"2023-05-20","typeVehicule":"Fourgonnette","conducteur":null,"vehicule":null}}
+16-05-2023 10:16:47.180 [http-nio-8080-exec-9] TRACE org.zalando.logbook.Logbook - {"origin":"remote","type":"request","correlation":"807e4819df103b50","protocol":"HTTP/1.1","remote":"0:0:0:0:0:0:0:1","method":"POST","uri":"http://localhost:8080/conducteurs","host":"localhost","path":"/conducteurs","scheme":"http","port":"8080","headers":{"accept":["*/*"],"accept-encoding":["gzip, deflate, br"],"authorization":["XXX"],"connection":["keep-alive"],"content-length":["486"],"content-type":["application/json"],"host":["localhost:8080"],"postman-token":["79e0da68-9b5e-4b9e-973e-031a4c148796"],"user-agent":["PostmanRuntime/7.32.2"]},"body":{"firstName":"c2","lastName":"c2","email":"c2@email.com","password":"password","role":"ROLE_CONDUCTOR","matricule":"c2","cin":"c2","dateNaissance":"2000-01-01","permis":[{"dateRemis":"2024-01-01","type":"B","imageScannee":"ABC"}]}}
+16-05-2023 10:16:47.614 [http-nio-8080-exec-9] WARN  o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 1062, SQLState: 23000
+16-05-2023 10:16:47.616 [http-nio-8080-exec-9] ERROR o.h.e.jdbc.spi.SqlExceptionHelper - Duplicate entry '1' for key 'conducteur.PRIMARY'
+16-05-2023 10:16:47.663 [http-nio-8080-exec-9] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.DataIntegrityViolationException: could not execute statement; SQL [n/a]; constraint [conducteur.PRIMARY]] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'conducteur.PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:197)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:3444)
+	at org.hibernate.persister.entity.AbstractEntityPersister.insert(AbstractEntityPersister.java:4073)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:103)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:612)
+	at org.hibernate.engine.spi.ActionQueue.lambda$executeActions$1(ActionQueue.java:483)
+	at java.base/java.util.LinkedHashMap.forEach(LinkedHashMap.java:721)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:480)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:329)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:39)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:107)
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1425)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:477)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2234)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1930)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:183)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:281)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:561)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:743)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:711)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:659)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:409)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:137)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:163)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184)
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:218)
+	at jdk.proxy4/jdk.proxy4.$Proxy135.save(Unknown Source)
+	at org.moha.miniproject.services.conducteur.ConducteurServiceImp.saveDriver(ConducteurServiceImp.java:61)
+	at org.moha.miniproject.rest.ConducteurController.createConducteur(ConducteurController.java:37)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:343)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at org.moha.miniproject.rest.ConducteurController$$SpringCGLIB$$0.createConducteur(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.zalando.logbook.servlet.LogbookFilter.doFilter(LogbookFilter.java:76)
+	at org.zalando.logbook.servlet.HttpFilter.doFilter(HttpFilter.java:32)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.moha.miniproject.filters.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:60)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.zalando.logbook.servlet.LogbookFilter.doFilter(LogbookFilter.java:76)
+	at org.zalando.logbook.servlet.SecureLogbookFilter.doFilter(SecureLogbookFilter.java:32)
+	at org.zalando.logbook.servlet.HttpFilter.doFilter(HttpFilter.java:32)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+16-05-2023 10:17:01.859 [http-nio-8080-exec-10] TRACE org.zalando.logbook.Logbook - {"origin":"remote","type":"request","correlation":"f90c2cd582e16e46","protocol":"HTTP/1.1","remote":"0:0:0:0:0:0:0:1","method":"POST","uri":"http://localhost:8080/conducteurs","host":"localhost","path":"/conducteurs","scheme":"http","port":"8080","headers":{"accept":["*/*"],"accept-encoding":["gzip, deflate, br"],"authorization":["XXX"],"connection":["keep-alive"],"content-length":["447"],"content-type":["application/json"],"host":["localhost:8080"],"postman-token":["740b2fe8-58bf-4e3b-bad4-ee5339eed0e2"],"user-agent":["PostmanRuntime/7.32.2"]},"body":{"firstName":"c2","lastName":"c2","email":"c2@email.com","password":"password","matricule":"c2","cin":"c2","dateNaissance":"2000-01-01","permis":[{"dateRemis":"2024-01-01","type":"B","imageScannee":"ABC"}]}}
+16-05-2023 10:17:02.326 [http-nio-8080-exec-10] TRACE org.zalando.logbook.Logbook - {"origin":"local","type":"response","correlation":"f90c2cd582e16e46","duration":465,"protocol":"HTTP/1.1","status":200,"headers":{"Cache-Control":["no-cache, no-store, max-age=0, must-revalidate"],"Connection":["keep-alive"],"Content-Type":["application/json"],"Date":["Tue, 16 May 2023 09:17:02 GMT"],"Expires":["0"],"Keep-Alive":["timeout=60"],"Pragma":["no-cache"],"Transfer-Encoding":["chunked"],"X-Content-Type-Options":["nosniff"],"X-Frame-Options":["DENY"],"X-XSS-Protection":["0"]},"body":{"id":2,"firstName":"c2","lastName":"c2","email":"c2@email.com","password":"$2a$10$7R505tJQubbsgn0kfBfQLuvHk9l8Eh/mel73ICkvG78Il3KAusfRe","role":"ROLE_CONDUCTOR","matricule":"c2","cin":"c2","dateNaissance":"2000-01-01","permis":[{"idPermis":4,"dateRemis":"2024-01-01","type":"B","imageScannee":"ABC"}],"enabled":true,"authorities":[{"authority":"ROLE_CONDUCTOR"}],"username":"c2@email.com","accountNonExpired":true,"credentialsNonExpired":true,"accountNonLocked":true}}
+16-05-2023 10:19:57.809 [http-nio-8080-exec-3] TRACE org.zalando.logbook.Logbook - {"origin":"remote","type":"request","correlation":"df2f1f7e1499133a","protocol":"HTTP/1.1","remote":"0:0:0:0:0:0:0:1","method":"GET","uri":"http://localhost:8080/conducteurs/disponible?dateDepart=2023-05-14&dateArrive=2023-05-20","host":"localhost","path":"/conducteurs/disponible","scheme":"http","port":"8080","headers":{"accept":["*/*"],"accept-encoding":["gzip, deflate, br"],"authorization":["XXX"],"connection":["keep-alive"],"content-length":["447"],"content-type":["application/json"],"host":["localhost:8080"],"postman-token":["9bc57442-3265-4642-9c29-dc55dca42c95"],"user-agent":["PostmanRuntime/7.32.2"]},"body":{"firstName":"c2","lastName":"c2","email":"c2@email.com","password":"password","matricule":"c2","cin":"c2","dateNaissance":"2000-01-01","permis":[{"dateRemis":"2024-01-01","type":"B","imageScannee":"ABC"}]}}
+16-05-2023 10:19:57.887 [http-nio-8080-exec-3] TRACE org.zalando.logbook.Logbook - {"origin":"local","type":"response","correlation":"df2f1f7e1499133a","duration":76,"protocol":"HTTP/1.1","status":200,"headers":{"Cache-Control":["no-cache, no-store, max-age=0, must-revalidate"],"Connection":["keep-alive"],"Content-Type":["application/json"],"Date":["Tue, 16 May 2023 09:19:57 GMT"],"Expires":["0"],"Keep-Alive":["timeout=60"],"Pragma":["no-cache"],"Transfer-Encoding":["chunked"],"X-Content-Type-Options":["nosniff"],"X-Frame-Options":["DENY"],"X-XSS-Protection":["0"]},"body":[{"id":1,"firstName":"moha","lastName":"med","email":"conduc@teur.ma","password":"$2a$12$1iS7YSCz6AFdWU.CihKPDO3YbZD6mKFMfLFIATjUvE1hLaRRG8h0G","role":"ROLE_CONDUCTOR","matricule":"mat001","cin":"jc123456","dateNaissance":"2023-05-23","permis":[{"idPermis":1,"dateRemis":null,"type":"C","imageScannee":null},{"idPermis":2,"dateRemis":null,"type":"B","imageScannee":null}],"enabled":true,"authorities":[{"authority":"ROLE_CONDUCTOR"}],"username":"conduc@teur.ma","accountNonExpired":true,"credentialsNonExpired":true,"accountNonLocked":true},{"id":2,"firstName":"c2","lastName":"c2","email":"c2@email.com","password":"$2a$10$7R505tJQubbsgn0kfBfQLuvHk9l8Eh/mel73ICkvG78Il3KAusfRe","role":"ROLE_CONDUCTOR","matricule":"c2","cin":"c2","dateNaissance":"2000-01-01","permis":[],"enabled":true,"authorities":[{"authority":"ROLE_CONDUCTOR"}],"username":"c2@email.com","accountNonExpired":true,"credentialsNonExpired":true,"accountNonLocked":true}]}
+16-05-2023 10:21:00.570 [http-nio-8080-exec-8] TRACE org.zalando.logbook.Logbook - {"origin":"remote","type":"request","correlation":"c2086de0c44ae23d","protocol":"HTTP/1.1","remote":"0:0:0:0:0:0:0:1","method":"GET","uri":"http://localhost:8080/conducteurs/disponible?dateDepart=2023-05-14&dateArrive=2023-05-20","host":"localhost","path":"/conducteurs/disponible","scheme":"http","port":"8080","headers":{"accept":["*/*"],"accept-encoding":["gzip, deflate, br"],"authorization":["XXX"],"connection":["keep-alive"],"content-length":["447"],"content-type":["application/json"],"host":["localhost:8080"],"postman-token":["b2a3bed3-064a-44e5-ab3d-ba2362d6c698"],"user-agent":["PostmanRuntime/7.32.2"]},"body":{"firstName":"c2","lastName":"c2","email":"c2@email.com","password":"password","matricule":"c2","cin":"c2","dateNaissance":"2000-01-01","permis":[{"dateRemis":"2024-01-01","type":"B","imageScannee":"ABC"}]}}
+16-05-2023 10:21:00.593 [http-nio-8080-exec-8] TRACE org.zalando.logbook.Logbook - {"origin":"local","type":"response","correlation":"c2086de0c44ae23d","duration":22,"protocol":"HTTP/1.1","status":200,"headers":{"Cache-Control":["no-cache, no-store, max-age=0, must-revalidate"],"Connection":["keep-alive"],"Content-Type":["application/json"],"Date":["Tue, 16 May 2023 09:21:00 GMT"],"Expires":["0"],"Keep-Alive":["timeout=60"],"Pragma":["no-cache"],"Transfer-Encoding":["chunked"],"X-Content-Type-Options":["nosniff"],"X-Frame-Options":["DENY"],"X-XSS-Protection":["0"]},"body":[{"id":1,"firstName":"moha","lastName":"med","email":"conduc@teur.ma","password":"$2a$12$1iS7YSCz6AFdWU.CihKPDO3YbZD6mKFMfLFIATjUvE1hLaRRG8h0G","role":"ROLE_CONDUCTOR","matricule":"mat001","cin":"jc123456","dateNaissance":"2023-05-23","permis":[{"idPermis":1,"dateRemis":null,"type":"C","imageScannee":null},{"idPermis":2,"dateRemis":null,"type":"B","imageScannee":null}],"enabled":true,"authorities":[{"authority":"ROLE_CONDUCTOR"}],"username":"conduc@teur.ma","accountNonExpired":true,"credentialsNonExpired":true,"accountNonLocked":true},{"id":2,"firstName":"c2","lastName":"c2","email":"c2@email.com","password":"$2a$10$7R505tJQubbsgn0kfBfQLuvHk9l8Eh/mel73ICkvG78Il3KAusfRe","role":"ROLE_CONDUCTOR","matricule":"c2","cin":"c2","dateNaissance":"2000-01-01","permis":[],"enabled":true,"authorities":[{"authority":"ROLE_CONDUCTOR"}],"username":"c2@email.com","accountNonExpired":true,"credentialsNonExpired":true,"accountNonLocked":true}]}
+16-05-2023 10:22:33.758 [http-nio-8080-exec-9] TRACE org.zalando.logbook.Logbook - {"origin":"remote","type":"request","correlation":"df11a7fcd40efde1","protocol":"HTTP/1.1","remote":"0:0:0:0:0:0:0:1","method":"GET","uri":"http://localhost:8080/conducteurs/2","host":"localhost","path":"/conducteurs/2","scheme":"http","port":"8080","headers":{"accept":["*/*"],"accept-encoding":["gzip, deflate, br"],"authorization":["XXX"],"connection":["keep-alive"],"host":["localhost:8080"],"postman-token":["88108edd-ae01-4510-ad22-34ddef92593b"],"user-agent":["PostmanRuntime/7.32.2"]}}
+16-05-2023 10:22:33.799 [http-nio-8080-exec-9] TRACE org.zalando.logbook.Logbook - {"origin":"local","type":"response","correlation":"df11a7fcd40efde1","duration":40,"protocol":"HTTP/1.1","status":200,"headers":{"Cache-Control":["no-cache, no-store, max-age=0, must-revalidate"],"Connection":["keep-alive"],"Content-Type":["application/json"],"Date":["Tue, 16 May 2023 09:22:33 GMT"],"Expires":["0"],"Keep-Alive":["timeout=60"],"Pragma":["no-cache"],"Transfer-Encoding":["chunked"],"X-Content-Type-Options":["nosniff"],"X-Frame-Options":["DENY"],"X-XSS-Protection":["0"]},"body":{"id":2,"firstName":"c2","lastName":"c2","email":"c2@email.com","password":"$2a$10$7R505tJQubbsgn0kfBfQLuvHk9l8Eh/mel73ICkvG78Il3KAusfRe","role":"ROLE_CONDUCTOR","matricule":"c2","cin":"c2","dateNaissance":"2000-01-01","permis":[],"enabled":true,"authorities":[{"authority":"ROLE_CONDUCTOR"}],"username":"c2@email.com","accountNonExpired":true,"credentialsNonExpired":true,"accountNonLocked":true}}
+16-05-2023 10:24:20.947 [http-nio-8080-exec-2] TRACE org.zalando.logbook.Logbook - {"origin":"remote","type":"request","correlation":"b07efc2cbcaff975","protocol":"HTTP/1.1","remote":"0:0:0:0:0:0:0:1","method":"POST","uri":"http://localhost:8080/affectation/conducteur","host":"localhost","path":"/affectation/conducteur","scheme":"http","port":"8080","headers":{"accept":["*/*"],"accept-encoding":["gzip, deflate, br"],"authorization":["XXX"],"connection":["keep-alive"],"content-length":["47"],"content-type":["application/json"],"host":["localhost:8080"],"postman-token":["7227d168-1265-43e6-b321-4836bef126ee"],"user-agent":["PostmanRuntime/7.32.2"]},"body":{"idConducteur":2,"idVoyage":3}}
+16-05-2023 10:24:20.975 [http-nio-8080-exec-2] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.Exception: Le conducteur n'est pas conforme] with root cause
+java.lang.Exception: Le conducteur n'est pas conforme
+	at org.moha.miniproject.services.affectation.AffectationServiceImp.affecterConducteur(AffectationServiceImp.java:53)
+	at org.moha.miniproject.rest.AffectationController.affecterConducteur(AffectationController.java:18)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:207)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:152)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:884)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1081)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:974)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1011)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:914)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:731)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:814)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:223)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:110)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.zalando.logbook.servlet.LogbookFilter.doFilter(LogbookFilter.java:76)
+	at org.zalando.logbook.servlet.HttpFilter.doFilter(HttpFilter.java:32)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365)
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:131)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:85)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.moha.miniproject.filters.JwtAuthenticationFilter.doFilterInternal(JwtAuthenticationFilter.java:60)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82)
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.zalando.logbook.servlet.LogbookFilter.doFilter(LogbookFilter.java:76)
+	at org.zalando.logbook.servlet.SecureLogbookFilter.doFilter(SecureLogbookFilter.java:32)
+	at org.zalando.logbook.servlet.HttpFilter.doFilter(HttpFilter.java:32)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:185)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:158)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:177)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:119)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:400)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:859)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1734)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+16-05-2023 10:26:14.202 [http-nio-8080-exec-5] TRACE org.zalando.logbook.Logbook - {"origin":"remote","type":"request","correlation":"df88ec22463b43b7","protocol":"HTTP/1.1","remote":"0:0:0:0:0:0:0:1","method":"POST","uri":"http://localhost:8080/affectation/conducteur","host":"localhost","path":"/affectation/conducteur","scheme":"http","port":"8080","headers":{"accept":["*/*"],"accept-encoding":["gzip, deflate, br"],"authorization":["XXX"],"connection":["keep-alive"],"content-length":["47"],"content-type":["application/json"],"host":["localhost:8080"],"postman-token":["cab68b9f-27f1-4435-a4e5-b4248c0ccbc3"],"user-agent":["PostmanRuntime/7.32.2"]},"body":{"idConducteur":2,"idVoyage":3}}
+16-05-2023 10:26:14.267 [http-nio-8080-exec-5] TRACE org.zalando.logbook.Logbook - {"origin":"local","type":"response","correlation":"df88ec22463b43b7","duration":65,"protocol":"HTTP/1.1","status":200,"headers":{"Cache-Control":["no-cache, no-store, max-age=0, must-revalidate"],"Connection":["keep-alive"],"Content-Length":["18"],"Content-Type":["text/plain;charset=UTF-8"],"Date":["Tue, 16 May 2023 09:26:14 GMT"],"Expires":["0"],"Keep-Alive":["timeout=60"],"Pragma":["no-cache"],"X-Content-Type-Options":["nosniff"],"X-Frame-Options":["DENY"],"X-XSS-Protection":["0"]},"body":"Done Successfully!"}
+16-05-2023 11:05:16.595 [HikariPool-1 housekeeper] WARN  com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=38m13s927ms3µs900ns).
+16-05-2023 11:11:31.595 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+16-05-2023 11:11:31.602 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+16-05-2023 11:11:31.615 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
