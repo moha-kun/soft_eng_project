@@ -49,11 +49,11 @@ public class AffectationServiceImp implements AffectationService {
             if (isDispo) {
                 voyage.setConducteur(conducteur);
                 voyageRepository.save(voyage);
-                return "Done Successfully!";
+                return "Conductor with Id " + idConducteur + " is affected to voyage with Id " + idVoyage + " Successfully!";
             }
-            throw new Exception("Le conducteur n'est pas disponible");
+            throw new Exception("Conductor with Id " + idConducteur + " is not available");
         }
-        throw new Exception("Le conducteur n'est pas conforme");
+        throw new Exception("Conductor with Id " + idConducteur + " is not conform");
     }
 
     @Override
@@ -75,11 +75,11 @@ public class AffectationServiceImp implements AffectationService {
             if (isDispo) {
                 voyage.setVehicule(vehicule);
                 voyageRepository.save(voyage);
-                return "Done Successfully!";
+                return "Conductor with Id " + idVehicule + " is affected to voyage with Id " + idVoyage + " Successfully!";
             }
-            throw new Exception("Le vehicule n'est pas disponible");
+            throw new Exception("Vehicule with Id " + idVehicule + " is not available");
         }
-        throw new Exception("Le vehicule n'est pas conforme");
+        throw new Exception("Vehicule with Id " + idVehicule + " is not conform");
     }
 
 }
