@@ -48,9 +48,7 @@ public class VoyageServiceImpl implements VoyageService {
     @Override
     public Voyage updateVoyage(Voyage voyage) throws Exception {
 
-        Voyage v = voyageRepository.findById(voyage.getIdVoyage()).orElse(null);
-        if (v == null)
-            throw new RuntimeException("Voyage with id " + voyage.getIdVoyage() + " not found");
+        Voyage v = getVoyageById(voyage.getIdVoyage());
 
         voyage.setConducteur(v.getConducteur());
         voyage.setVehicule(v.getVehicule());

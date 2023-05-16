@@ -1,5 +1,6 @@
 package org.moha.miniproject.services.affectation;
 
+import org.moha.miniproject.Repositories.VoyageRepository;
 import org.moha.miniproject.enteties.Conducteur;
 import org.moha.miniproject.enteties.Vehicule;
 import org.moha.miniproject.enteties.Voyage;
@@ -26,6 +27,8 @@ public class AffectationServiceImp implements AffectationService {
     @Autowired
     private VehiculeService vehiculeService;
     @Autowired
+    private VoyageRepository voyageRepository;
+    @Autowired
     private CorrespondanceService correspondanceService;
 
     @Override
@@ -45,7 +48,7 @@ public class AffectationServiceImp implements AffectationService {
         if (isConfo) {
             if (isDispo) {
                 voyage.setConducteur(conducteur);
-                voyageService.updateVoyage(voyage);
+                voyageRepository.save(voyage);
                 return "Done Successfully!";
             }
             throw new Exception("Le conducteur n'est pas disponible");
@@ -71,7 +74,7 @@ public class AffectationServiceImp implements AffectationService {
         if (isConfo) {
             if (isDispo) {
                 voyage.setVehicule(vehicule);
-                voyageService.updateVoyage(voyage);
+                voyageRepository.save(voyage);
                 return "Done Successfully!";
             }
             throw new Exception("Le vehicule n'est pas disponible");
