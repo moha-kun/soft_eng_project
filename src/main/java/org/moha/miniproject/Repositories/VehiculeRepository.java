@@ -19,14 +19,13 @@ public interface VehiculeRepository extends JpaRepository<Vehicule, Long> {
          * "OR vh NOT IN (SELECT vo.vehicule FROM Voyage vo)")
          */
         @Query("SELECT vh FROM Vehicule vh " +
-                        "WHERE NOT EXISTS (SELECT vo.vehicule FROM Voyage vo WHERE vo.vehicule = vh) " +
-                        "OR EXISTS (SELECT vo.vehicule FROM Voyage vo WHERE vo.vehicule = vh AND (:dateD >= vo.dateArrivee OR :dateA <= vo.dateDepart))")
+                        "WHERE vh NOT IN (SELECT vo.vehicule FROM Voyage vo WHERE vo.vehicule = vh) " +
+                        "OR vh NOT IN (SELECT vo.vehicule FROM Voyage vo WHERE (:dateD >= vo.dateArrivee OR :dateA <= vo.dateDepart))")
         public List<Vehicule> getDiponibleVehicule(LocalDate dateD, LocalDate dateA);
 
         @Query("SELECT vh FROM Vehicule vh " +
-                        "WHERE NOT EXISTS (SELECT vo.vehicule FROM Voyage vo WHERE vo.vehicule = vh AND vo.idVoyage <> :idVoyage) "
-                        +
-                        "OR EXISTS (SELECT vo.vehicule FROM Voyage vo WHERE vo.vehicule = vh AND (:dateD >= vo.dateArrivee OR :dateA <= vo.dateDepart))")
+                        "WHERE vh NOT IN (SELECT vo.vehicule FROM Voyage vo WHERE vo.vehicule = vh AND vo.idVoyage <> :idVoyage) " +
+                        "OR vh NOT IN (SELECT vo.vehicule FROM Voyage vo WHERE vo.vehicule = vh AND (:dateD >= vo.dateArrivee OR :dateA <= vo.dateDepart))")
         public List<Vehicule> getDiponibleVehiculeAndIgnoreVoyage(LocalDate dateD, LocalDate dateA, Long idVoyage);
 
 }

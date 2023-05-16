@@ -23,6 +23,9 @@ public class VehiculeServiceImp implements VehiculeService {
   @Autowired
   private CorrespondanceService correspondanceService;
 
+  @Autowired
+  private VignetteRepository vignetteRepository;
+
   @Override
   public List<Vehicule> getAllVehicles() {
     return vehiculeRepository.findAll();
@@ -45,13 +48,34 @@ public class VehiculeServiceImp implements VehiculeService {
     List<CarteGrise> cgList = vehicule.getCarteGrises();
     List<Assurance> assurances = vehicule.getAssurances();
     List<VisiteTechnique> visiteTechniques = vehicule.getVisiteTechniques();
+    List<Vignette> vignettes = vehicule.getVignettes();
 
-    if(cgList != null)
-      carteGriseRepository.saveAll(cgList);
-    if(assurances != null)
-      assuranceRepository.saveAll(assurances);
-    if(visiteTechniques != null)
-      visiteTechniqueRepository.saveAll(visiteTechniques);
+    //This is probably not the best way to do this
+    vehiculeRepository.save(vehicule);
+    if(cgList != null){
+      for(CarteGrise c : cgList){
+        c.setVehicule(vehicule);
+        carteGriseRepository.save(c);
+      }
+    }
+    if(assurances != null){
+      for(Assurance a : assurances){
+        a.setVehicule(vehicule);
+        assuranceRepository.save(a);
+      }
+    }
+    if(visiteTechniques != null){
+      for(VisiteTechnique v : visiteTechniques){
+        v.setVehicule(vehicule);
+        visiteTechniqueRepository.save(v);
+      }
+    }
+    if(vignettes != null){
+      for(Vignette v : vignettes){
+        v.setVehicule(vehicule);
+        vignetteRepository.save(v);
+      }
+    }
 
     return vehiculeRepository.save(vehicule);
   }

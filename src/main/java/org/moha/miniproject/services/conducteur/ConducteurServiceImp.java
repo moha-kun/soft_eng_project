@@ -51,14 +51,16 @@ public class ConducteurServiceImp implements ConducteurService {
         }
         // Encrypt password
         conducteur.setPassword(passwordEncoder.encode(conducteur.getPassword()));
-
-        if(conducteur.getPermis() != null){
-            for (Permis p : conducteur.getPermis())
-                permisService.savePermis(p);
-        }
         // For security reasons we need to reset role
         conducteur.setRole(Role.ROLE_CONDUCTOR);
+        conducteurRepository.save(conducteur);
 
+        if(conducteur.getPermis() != null){
+            for (Permis p : conducteur.getPermis()){
+                p.setConducteur(conducteur);
+                permisService.savePermis(p);
+            }
+        }
         return this.conducteurRepository.save(conducteur);
     }
 
