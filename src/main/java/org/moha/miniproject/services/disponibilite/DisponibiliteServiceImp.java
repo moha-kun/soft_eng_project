@@ -52,6 +52,7 @@ public class DisponibiliteServiceImp implements DisponibiliteService {
 
     @Override
     public List<Conducteur> getAvailableConducteurs(LocalDate dateDepart, LocalDate dateArrive) {
+        System.out.println(conducteurRepository.getDisponibleConducteur(dateDepart, dateArrive));
         return conducteurRepository.getDisponibleConducteur(dateDepart, dateArrive);
     }
 
