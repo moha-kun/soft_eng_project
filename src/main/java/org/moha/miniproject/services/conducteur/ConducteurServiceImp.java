@@ -9,10 +9,8 @@ import org.moha.miniproject.enteties.Role;
 import org.moha.miniproject.enteties.Voyage;
 import org.moha.miniproject.services.permis.PermisService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -67,8 +65,10 @@ public class ConducteurServiceImp implements ConducteurService {
     @Override
     public Conducteur updateDriver(Conducteur conducteur) throws Exception {
         Conducteur oldCond = getDriverById(conducteur.getId());
+
         // We don't want to input the password everytime we want to update
         conducteur.setPassword(oldCond.getPassword());
+        conducteur.setEmail(oldCond.getEmail()); //Cannot update email
         conducteur.setRole(Role.ROLE_CONDUCTOR);
 
         if(conducteur.getPermis() != null){

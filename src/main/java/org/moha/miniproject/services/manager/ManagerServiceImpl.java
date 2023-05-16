@@ -47,6 +47,8 @@ public class ManagerServiceImpl implements ManagerService {
     public Manager updateManager(Manager manager) {
         Manager oldManager = getManagerById(manager.getId());
 
+        manager.setEmail(oldManager.getEmail());
+        manager.setRole(Role.ROLE_MANAGER);
         manager.setPassword(oldManager.getPassword());
         return managerRepository.save(manager);
     }
