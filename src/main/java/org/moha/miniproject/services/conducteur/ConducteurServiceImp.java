@@ -53,8 +53,9 @@ public class ConducteurServiceImp implements ConducteurService {
         conducteur.setPassword(passwordEncoder.encode(conducteur.getPassword()));
         // For security reasons we need to reset role
         conducteur.setRole(Role.ROLE_CONDUCTOR);
-        conducteurRepository.save(conducteur);
 
+        //This should be in another endpoint
+        conducteurRepository.save(conducteur);
         if(conducteur.getPermis() != null){
             for (Permis p : conducteur.getPermis()){
                 p.setConducteur(conducteur);
