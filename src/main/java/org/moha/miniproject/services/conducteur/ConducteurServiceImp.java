@@ -11,6 +11,7 @@ import org.moha.miniproject.services.permis.PermisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 @Service
@@ -34,10 +35,10 @@ public class ConducteurServiceImp implements ConducteurService {
     }
 
     @Override
-    public Conducteur getDriverById(Long driverId) {
+    public Conducteur getDriverById(Long driverId) throws Exception {
         Conducteur conducteur = this.conducteurRepository.findById(driverId).orElse(null);
         if (conducteur == null) {
-            throw new RuntimeException("No driver with such id");
+            throw new Exception("No driver with such id");
         }
         return conducteur;
     }
@@ -62,10 +63,12 @@ public class ConducteurServiceImp implements ConducteurService {
     }
 
     @Override
-    public Conducteur updateDriver(Conducteur conducteur) {
+    public Conducteur updateDriver(Conducteur conducteur) throws Exception {
         Conducteur oldCond = getDriverById(conducteur.getId());
+
         // We don't want to input the password everytime we want to update
         conducteur.setPassword(oldCond.getPassword());
+        conducteur.setEmail(oldCond.getEmail()); //Cannot update email
         conducteur.setRole(Role.ROLE_CONDUCTOR);
 
         if(conducteur.getPermis() != null){
@@ -76,7 +79,7 @@ public class ConducteurServiceImp implements ConducteurService {
     }
 
     @Override
-    public Conducteur updateDriverPassword(Long driverId, PasswordUpdateDTO passwordUpdateDTO) {
+    public Conducteur updateDriverPassword(Long driverId, PasswordUpdateDTO passwordUpdateDTO) throws Exception {
         Conducteur oldCond = getDriverById(driverId);
 
         boolean passCheck = passwordEncoder.matches(passwordUpdateDTO.getOldPassword(), oldCond.getPassword());
@@ -90,7 +93,7 @@ public class ConducteurServiceImp implements ConducteurService {
     }
 
     @Override
-    public void removeDriver(Long driverId) {
+    public void removeDriver(Long driverId) throws Exception {
         Conducteur conducteur = getDriverById(driverId);
         List<Voyage> voyages = voyageRepository.findVoyagesByConducteur(conducteur);
         if(voyages.size() > 0)

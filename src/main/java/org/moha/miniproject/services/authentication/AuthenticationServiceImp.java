@@ -22,7 +22,7 @@ public class AuthenticationServiceImp implements AuthenticationService {
         @Override
         public AuthenticationResponse authenticate(AuthenticationRequest request) {
                 var user = userRepository.findByEmail(request.getEmail())
-                                .orElseThrow(() -> new RuntimeException("User not found"));
+                                .orElseThrow(() -> new RuntimeException("Bad credentials"));
 
                 authenticationManager.authenticate(
                                 new UsernamePasswordAuthenticationToken(
