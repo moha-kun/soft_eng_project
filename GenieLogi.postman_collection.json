@@ -1,0 +1,813 @@
+{
+	"info": {
+		"_postman_id": "55c889aa-6c87-4748-9b33-ffaa919dd712",
+		"name": "GenieLogi",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24392815"
+	},
+	"item": [
+		{
+			"name": "Conducteur",
+			"item": [
+				{
+					"name": "Create conducteur",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n    \"firstName\": \"c2\",\r\n    \"lastName\": \"c2\",\r\n    \"email\": \"c2@email.com\",\r\n    \"password\": \"testPass\",\r\n    \"matricule\": \"c2\",\r\n    \"cin\": \"c2\",\r\n    \"dateNaissance\": \"2000-01-01\",\r\n    \"permis\": [\r\n        {\r\n            \"dateRemis\": \"2024-01-01\",\r\n            \"type\": \"C\",\r\n            \"imageScannee\": \"ABC\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/conducteurs",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"conducteurs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update conducteur",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{  \r\n    \"firstName\": \"c2\",\r\n    \"lastName\": \"c2\",\r\n    \"email\": \"c2@email.com\",\r\n    \"password\": \"testPass\",\r\n    \"matricule\": \"c2\",\r\n    \"cin\": \"c2\",\r\n    \"dateNaissance\": \"2000-01-01\",\r\n    \"permis\": [\r\n        {   \r\n            \"idPermis\": 14,\r\n            \"dateRemis\": \"2024-01-01\",\r\n            \"type\": \"B\",\r\n            \"imageScannee\": \"ABC\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/conducteurs/252",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"conducteurs",
+								"252"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Conducteurs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/conducteurs",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"conducteurs"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get disponible conducteurs",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/conducteurs/disponible?dateDepart=2023-06-01&dateArrive=2023-06-20",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"conducteurs",
+								"disponible"
+							],
+							"query": [
+								{
+									"key": "dateDepart",
+									"value": "2023-06-01"
+								},
+								{
+									"key": "dateArrive",
+									"value": "2023-06-20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Conducteur by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/conducteurs/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"conducteurs",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete conducteur",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/conducteurs/252",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"conducteurs",
+								"252"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn1dLCJzdWIiOiJtMUBlbWFpbC5jb20iLCJpYXQiOjE2ODQyMjkxODcsImV4cCI6MTY4NDMxNTU4N30.Dd05KZIkA6ef5I41gAqo4r0YzH1SDRu7HeRBuFvX8tI",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Voyage",
+			"item": [
+				{
+					"name": "Create voyage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"pointDepart\": \"Agadir\",\r\n    \"pointArrivee\": \"Dakhla\",\r\n    \"dateDepart\": \"2023-06-01\",\r\n    \"dateArrivee\": \"2023-06-20\",\r\n    \"typeVehicule\" : \"SUV\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/voyages",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voyages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update voyage",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"idVoyage\": 3,\r\n        \"pointDepart\": \"Agadir\",\r\n        \"pointArrivee\": \"Dakhla\",\r\n        \"dateDepart\": \"2023-05-15\",\r\n        \"dateArrivee\": \"2023-05-20\",\r\n        \"typeVehicule\": \"SUV\",\r\n        \"conducteur\":{\r\n            \"id\":301\r\n        }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/voyages/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voyages",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Voyages",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/voyages",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voyages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Voyage with id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/voyages/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voyages",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete voyage with id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/voyages/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voyages",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn1dLCJzdWIiOiJtMUBlbWFpbC5jb20iLCJpYXQiOjE2ODQyMjkxODcsImV4cCI6MTY4NDMxNTU4N30.Dd05KZIkA6ef5I41gAqo4r0YzH1SDRu7HeRBuFvX8tI",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Vehicule",
+			"item": [
+				{
+					"name": "Create vehicule",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"matricule\": \"v1\",\r\n    \"model\" : \"SUV\",\r\n    \"dateMiseRoute\" : \"2023-05-15\",\r\n    \"assurances\": [\r\n        {\r\n            \"dateSoumis\": \"2023-01-01\",\r\n            \"dureeMois\": 11\r\n        }\r\n    ],\r\n    \"visiteTechniques\":[\r\n        {\r\n            \"dateVisite\":\"2023-01-01\"\r\n        }\r\n    ],\r\n    \"vignettes\": [\r\n        {\r\n            \"dateSoumis\":\"2023-01-01\"\r\n        }\r\n    ],\r\n    \"carteGrises\": [\r\n        {\r\n            \"dateSoumis\": \"2023-01-01\",\r\n            \"matricule\":\"v1\",\r\n            \"numChasis\": \"v1v1\"\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/vehicules",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get vehicules",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/vehicules",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicules"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get disponible vehicules",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/vehicules/disponible?dateDepart=2023-06-01&dateArrive=2023-06-20",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicules",
+								"disponible"
+							],
+							"query": [
+								{
+									"key": "dateDepart",
+									"value": "2023-06-01"
+								},
+								{
+									"key": "dateArrive",
+									"value": "2023-06-20"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get vehicule with id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/voyages/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"voyages",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete vehicule with id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/vehicules/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicules",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn1dLCJzdWIiOiJtMUBlbWFpbC5jb20iLCJpYXQiOjE2ODQxNzczMjgsImV4cCI6MTY4NDI2MzcyOH0.n7nwnLF9LSQ6F_p9lTDe365IV2gd88ryhRL7lpF3gqQ",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"email\": \"c3@email.com\",\r\n    \"password\": \"testPass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/auth/authenticate",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"auth",
+						"authenticate"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Manager",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9BRE1JTiJ9XSwic3ViIjoiYWRtaW5AZW1haWwuY29tIiwiaWF0IjoxNjg0MTc3MjEzLCJleHAiOjE2ODQyNjM2MTN9.IZeR8fxnPq54kYd-4IgF_eFFaHnHzt3pdjiYC_zOUtA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n    \"firstName\": \"m1\",\r\n    \"lastName\": \"m1\",\r\n    \"email\": \"m1@email.com\",\r\n    \"password\": \"testPass\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/managers",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"managers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Affectation conducteur",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn1dLCJzdWIiOiJtMUBlbWFpbC5jb20iLCJpYXQiOjE2ODQxNzczMjgsImV4cCI6MTY4NDI2MzcyOH0.n7nwnLF9LSQ6F_p9lTDe365IV2gd88ryhRL7lpF3gqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idConducteur\": 252,\r\n    \"idVoyage\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/affectation/conducteur",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"affectation",
+						"conducteur"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Affectation Vehicule",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn1dLCJzdWIiOiJtMUBlbWFpbC5jb20iLCJpYXQiOjE2ODQxNzczMjgsImV4cCI6MTY4NDI2MzcyOH0.n7nwnLF9LSQ6F_p9lTDe365IV2gd88ryhRL7lpF3gqQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idVehicule\": 1,\r\n    \"idVoyage\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/affectation/vehicule",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"affectation",
+						"vehicule"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update voyage with id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn1dLCJzdWIiOiJ0ZXN0QGVtYWlsLmNvbSIsImlhdCI6MTY4MjUyOTcwNiwiZXhwIjoxNjgyNjE2MTA2fQ.2lg7RCathTws_7max24lbLv-tZhnNWFpqHQJ2_kWWKE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idVoyage\": 1,\r\n    \"pointDepart\": \"Agadir\",\r\n    \"pointArrivee\": \"Dakhla\",\r\n    \"dateDepart\": \"2023-04-26\",\r\n    \"dateArrivee\": \"2023-04-28\",\r\n    \"typeVehicule\": \"A\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/voyages/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"voyages",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiJ9.eyJyb2xlcyI6W3siYXV0aG9yaXR5IjoiUk9MRV9NQU5BR0VSIn1dLCJzdWIiOiJ0ZXN0QGVtYWlsLmNvbSIsImlhdCI6MTY4MjUzMzAxOCwiZXhwIjoxNjgyNjE5NDE4fQ.QxEcupVUvUZ7JUbE-s6adMyFQhY-nQmjHw3PgZ26SEE",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
