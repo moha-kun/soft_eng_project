@@ -76,13 +76,19 @@ public class VoyageServiceImpl implements VoyageService {
                     correspondanceService.correspondanceTypeVehicule(voyage.getTypeVehicule()));
             isVehiculeDispo = disponibiliteService.isVehiculeDisponible(vehicule.getIdVehicule(),
                     voyage.getDateDepart(), voyage.getDateArrivee(), voyage.getIdVoyage());
-
         }
 
         if (isCondConform && isCondDispo && isVehiculeConform && isVehiculeDispo) {
             voyageRepository.save(voyage);
         } else {
-            throw new RuntimeException("Conducteur is not available or doesnt conform with new trip.");
+            if(!isCondConform)
+                throw new RuntimeException("Current conducteur doesnt conform with the new trip.");
+            if(!isCondDispo)
+                throw new RuntimeException("Current conducteur isn't available in the new date range.");
+            if(!isVehiculeConform)
+                throw new RuntimeException("Current vehicule doesnt conform with the new trip.");
+            if(!isVehiculeDispo)
+                throw new RuntimeException("Current vehicule isn't available in the new date range.");
         }
 
         return voyage;
