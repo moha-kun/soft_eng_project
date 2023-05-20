@@ -1,5 +1,5 @@
 # Trips management mini project
-This project is the result of the effort of the contributing developers, under the supervision of Mr. @elyaakoubi, to build a trip management system.
+This project is the result of the effort of the contributing developers, under the supervision of Mr. [@elyaakoubi](https://github.com/elyaakoubi), to build a trip management system.
 
 To test the functionalities implemented, you can use the provided Postman collection named **GenieLogi.postman_collection.json**. It contains all the endpoints ready for testing. For the secure endpoints, you'll need to authenticate with a manager account and obtain a token. Once you have the token, you can include it in your requests to access the secured endpoints.
 
